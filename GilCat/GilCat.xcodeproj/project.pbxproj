@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107A58D1284F98BE003D6F2B /* register1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D0284F98BE003D6F2B /* register1.swift */; };
+		107A58D3284FA041003D6F2B /* register2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D2284FA041003D6F2B /* register2.swift */; };
+		107A58D5284FA055003D6F2B /* register3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D4284FA055003D6F2B /* register3.swift */; };
+		107A58D7284FA05E003D6F2B /* register4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D6284FA05E003D6F2B /* register4.swift */; };
+		107A58D9284FA08B003D6F2B /* register5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D8284FA08B003D6F2B /* register5.swift */; };
+		107A58DB284FA094003D6F2B /* register6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DA284FA094003D6F2B /* register6.swift */; };
+		107A58DD284FA09C003D6F2B /* register7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DC284FA09C003D6F2B /* register7.swift */; };
+		107A58DF284FA0A3003D6F2B /* register8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DE284FA0A3003D6F2B /* register8.swift */; };
+		107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58E2284FA4E5003D6F2B /* ColorExtension.swift */; };
+		10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9AE28503560003DBF63 /* CustomTextField.swift */; };
+		10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9B028504144003DBF63 /* CustomTitle.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE362849B796000268C7 /* Assets.xcassets */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
@@ -19,6 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107A58D0284F98BE003D6F2B /* register1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register1.swift; sourceTree = "<group>"; };
+		107A58D2284FA041003D6F2B /* register2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register2.swift; sourceTree = "<group>"; };
+		107A58D4284FA055003D6F2B /* register3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register3.swift; sourceTree = "<group>"; };
+		107A58D6284FA05E003D6F2B /* register4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register4.swift; sourceTree = "<group>"; };
+		107A58D8284FA08B003D6F2B /* register5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register5.swift; sourceTree = "<group>"; };
+		107A58DA284FA094003D6F2B /* register6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register6.swift; sourceTree = "<group>"; };
+		107A58DC284FA09C003D6F2B /* register7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register7.swift; sourceTree = "<group>"; };
+		107A58DE284FA0A3003D6F2B /* register8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register8.swift; sourceTree = "<group>"; };
+		107A58E2284FA4E5003D6F2B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		10CFA9AE28503560003DBF63 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		10CFA9B028504144003DBF63 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 		EF1DEE2F2849B795000268C7 /* GilCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GilCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,6 +64,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107A58CF284F98A0003D6F2B /* Registers */ = {
+			isa = PBXGroup;
+			children = (
+				107A58E4284FAB10003D6F2B /* registerViews */,
+			);
+			path = Registers;
+			sourceTree = "<group>";
+		};
+		107A58E4284FAB10003D6F2B /* registerViews */ = {
+			isa = PBXGroup;
+			children = (
+				107A58D0284F98BE003D6F2B /* register1.swift */,
+				107A58D2284FA041003D6F2B /* register2.swift */,
+				107A58D4284FA055003D6F2B /* register3.swift */,
+				107A58D6284FA05E003D6F2B /* register4.swift */,
+				107A58D8284FA08B003D6F2B /* register5.swift */,
+				107A58DA284FA094003D6F2B /* register6.swift */,
+				107A58DC284FA09C003D6F2B /* register7.swift */,
+				107A58DE284FA0A3003D6F2B /* register8.swift */,
+			);
+			path = registerViews;
+			sourceTree = "<group>";
+		};
 		EF1DEE262849B795000268C7 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +134,7 @@
 		EFA7B92D2849EA09006671EF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				107A58CF284F98A0003D6F2B /* Registers */,
 				EFA7B93C2849EBD6006671EF /* Home */,
 			);
 			path = Screen;
@@ -108,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EFA7B9372849EB5C006671EF /* TestExtension.swift */,
+				107A58E2284FA4E5003D6F2B /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -116,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				EFA7B9352849EB22006671EF /* ComponentsTestView.swift */,
+				10CFA9AE28503560003DBF63 /* CustomTextField.swift */,
+				10CFA9B028504144003DBF63 /* CustomTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,11 +297,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7B9452849EC54006671EF /* TestHomeView.swift in Sources */,
+				107A58D9284FA08B003D6F2B /* register5.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
+				107A58DF284FA0A3003D6F2B /* register8.swift in Sources */,
+				107A58D3284FA041003D6F2B /* register2.swift in Sources */,
+				10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */,
 				EFA7B9432849EC48006671EF /* TestSupportView.swift in Sources */,
 				EFA7B9362849EB22006671EF /* ComponentsTestView.swift in Sources */,
+				107A58D1284F98BE003D6F2B /* register1.swift in Sources */,
 				EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */,
+				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
+				10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */,
+				107A58DB284FA094003D6F2B /* register6.swift in Sources */,
+				107A58D5284FA055003D6F2B /* register3.swift in Sources */,
+				107A58DD284FA09C003D6F2B /* register7.swift in Sources */,
+				107A58D7284FA05E003D6F2B /* register4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
