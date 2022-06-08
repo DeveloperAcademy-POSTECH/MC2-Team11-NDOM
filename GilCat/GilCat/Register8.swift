@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Register8: View {
+    @State var temp = false
     @State var isModalPresented = false
     @State var newTagText = ""
     @State var tags: [[Tag]] = [
@@ -55,36 +56,43 @@ struct Register8: View {
     
     func getTagView(indexOfLine: Int, indexOfTag: Int) -> some View {
         var tag = tags[indexOfLine][indexOfTag]
-        return Text(tag.text)
-            .padding()
-            .foregroundColor(Color(hex: "FFFFFF"))
-            .background(Color(hex: "535353"))
-            .font(.system(size: 15, weight: Font.Weight.heavy))
-            .cornerRadius(20)
-            .overlay(
-                GeometryReader { reader -> Color in
-                    let maxX = reader.frame(in: .global).maxX
-                    if maxX > UIScreen.main.bounds.width - 50 && !tag.isExceeded {
-                        DispatchQueue.main.async {
-                            tag.isExceeded = true
-                            tags.append([tag])
-                            tags[indexOfLine].remove(at: indexOfTag)
+        return Button {
+            tags[indexOfLine][indexOfTag] = Tag(tag.text, isExceeded: tag.isExceeded, isClicked: !tag.isClicked)
+        } label: {
+            Text(tag.text)
+                .padding()
+                .foregroundColor(Color(hex: "FFFFFF"))
+                .background(tag.isClicked ? Color(hex: "FFAB73") : Color(hex: "535353"))
+                .font(.system(size: 15, weight: Font.Weight.heavy))
+                .cornerRadius(20)
+                .overlay(
+                    GeometryReader { reader -> Color in
+                        let maxX = reader.frame(in: .global).maxX
+                        if maxX > UIScreen.main.bounds.width - 50 && !tag.isExceeded {
+                            DispatchQueue.main.async {
+                                tag.isExceeded = true
+                                tags.append([tag])
+                                tags[indexOfLine].remove(at: indexOfTag)
+                            }
                         }
-                    }
-                    return Color.clear
-                },
-                alignment: .trailing
-            )
+                        return Color.clear
+                    },
+                    alignment: .trailing
+                )
+        }
     }
 }
 
-struct Tag: Identifiable, Hashable {
-    init(_ text: String) {
+struct Tag: Identifiable {
+    init(_ text: String, isExceeded: Bool = false, isClicked: Bool = false) {
         self.text = text
+        self.isExceeded = isExceeded
+        self.isClicked = isClicked
     }
     var id = UUID().uuidString
     var text: String
     var isExceeded = false
+    var isClicked = false
 }
 
 struct WriteTagView: View {
@@ -121,8 +129,7 @@ struct WriteTagView: View {
         .background(Color(hex: "39495B"))
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    isModalFocused = true
-                print("wiw")
+                isModalFocused = true
             }
         }
     }
