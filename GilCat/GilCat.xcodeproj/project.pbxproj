@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCA4F0AC285079EE00879A15 /* Register1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AB285079EE00879A15 /* Register1.swift */; };
+		BCA4F0AE28507A2700879A15 /* Register2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AD28507A2700879A15 /* Register2.swift */; };
+		BCA4F0B028507A3400879A15 /* Register8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AF28507A3400879A15 /* Register8.swift */; };
+		BCA4F0B228507A7900879A15 /* ViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B128507A7900879A15 /* ViewContents.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE362849B796000268C7 /* Assets.xcassets */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
@@ -30,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BCA4F0AB285079EE00879A15 /* Register1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register1.swift; sourceTree = "<group>"; };
+		BCA4F0AD28507A2700879A15 /* Register2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2.swift; sourceTree = "<group>"; };
+		BCA4F0AF28507A3400879A15 /* Register8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register8.swift; sourceTree = "<group>"; };
+		BCA4F0B128507A7900879A15 /* ViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContents.swift; sourceTree = "<group>"; };
 		EF1DEE2F2849B795000268C7 /* GilCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GilCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +96,10 @@
 				EFA7B9322849EAB7006671EF /* Sources */,
 				EFA7B92C2849E9EA006671EF /* Resources */,
 				EF1DEE382849B796000268C7 /* Preview Content */,
+				BCA4F0AB285079EE00879A15 /* Register1.swift */,
+				BCA4F0AD28507A2700879A15 /* Register2.swift */,
+				BCA4F0AF28507A3400879A15 /* Register8.swift */,
+				BCA4F0B128507A7900879A15 /* ViewContents.swift */,
 			);
 			path = GilCat;
 			sourceTree = "<group>";
@@ -308,8 +320,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7B9452849EC54006671EF /* TestHomeView.swift in Sources */,
+				BCA4F0AE28507A2700879A15 /* Register2.swift in Sources */,
+				BCA4F0B028507A3400879A15 /* Register8.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
 				EFA7B9432849EC48006671EF /* TestSupportView.swift in Sources */,
+				BCA4F0AC285079EE00879A15 /* Register1.swift in Sources */,
+				BCA4F0B228507A7900879A15 /* ViewContents.swift in Sources */,
 				EFA7B9362849EB22006671EF /* ComponentsTestView.swift in Sources */,
 				EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
