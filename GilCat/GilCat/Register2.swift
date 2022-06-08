@@ -47,9 +47,9 @@ struct Register2: View {
         .padding()
         .background(Color(hex: "39495B"))
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     focusedCode = 0
-               }
+            }
         }
     }
     
