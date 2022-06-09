@@ -35,12 +35,12 @@ struct Register2: View {
                 Button {
                 
                 } label: {
-                    CustomMainButton(text: "건너뛰기", foreground: Color.white, background: Color.darkBlueColor)
+                    CustomMainButton(text: "건너뛰기", foreground: Color.white, background: Color.darkBlue)
                 }
                 Button {
                 
                 } label: {
-                    CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.buttonColor)
+                    CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.orange)
                 }
             }
         }
@@ -56,7 +56,7 @@ struct Register2: View {
     func getCodeInputView(index: Int) -> some View {
         return TextEditor(text: $codeInput[index])
             .frame(width: 50, height: 65)
-            .background(Color.darkBlueColor)
+            .background(Color.darkBlue)
             .cornerRadius(20)
             .multilineTextAlignment(.center)
             .foregroundColor(Color.white)

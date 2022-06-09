@@ -20,7 +20,7 @@ struct Register1: View {
             Button {
             
             } label: {
-                CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.buttonColor)
+                CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.orange)
             }
         }
         .padding()
@@ -32,7 +32,7 @@ struct Register1: View {
             Text(String(order))
                 .frame(width: 30, height: 30)
                 .foregroundColor(Color.black)
-                .background(Color.buttonColor)
+                .background(Color.orange)
                 .cornerRadius(10)
             Text(text)
                 .foregroundColor(Color.white)
@@ -40,7 +40,7 @@ struct Register1: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.darkBlueColor)
+        .background(Color.darkBlue)
         .cornerRadius(20)
     }
 }
