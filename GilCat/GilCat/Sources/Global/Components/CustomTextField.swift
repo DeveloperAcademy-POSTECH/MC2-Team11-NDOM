@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State var catName : String = ""
-    @State var placeHolder : String = ""
+    @State var catName: String = ""
+    @State var placeHolder: String = ""
     
     private func customTextField() -> some View {
-        return ZStack{
+        return ZStack {
             if catName.isEmpty {
                 HStack {
                     Text("\(placeHolder)").foregroundColor(.gray).padding()
@@ -13,7 +13,7 @@ struct CustomTextField: View {
                 Spacer()
                 }
             }
-            TextField("",text: $catName).padding()
+            TextField("", text: $catName).padding()
         }
     }
 
