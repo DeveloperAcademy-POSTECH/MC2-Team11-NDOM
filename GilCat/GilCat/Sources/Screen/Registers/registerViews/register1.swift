@@ -16,14 +16,15 @@ struct Register1: View {
                 getProcessContentView(order: 2, text: "길냥이 프로필을 적아주세요!")
                 getProcessContentView(order: 3, text: "나만의 길냥이를 만들어주세요!")
             }
+            .padding()
             Spacer()
             Button {
             
             } label: {
                 CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.lightOrange)
             }
+            .padding()
         }
-        .padding()
         .background(Color.backgroundColor)
     }
     
