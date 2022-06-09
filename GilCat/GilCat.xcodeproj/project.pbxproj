@@ -18,6 +18,8 @@
 		107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58E2284FA4E5003D6F2B /* ColorExtension.swift */; };
 		10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9AE28503560003DBF63 /* CustomTextField.swift */; };
 		10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9B028504144003DBF63 /* CustomTitle.swift */; };
+		BCA4F0B4285175C000879A15 /* CustomMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B3285175C000879A15 /* CustomMainButton.swift */; };
+		BCA4F0B828517BC500879A15 /* CustomSubTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B728517BC500879A15 /* CustomSubTitle.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE362849B796000268C7 /* Assets.xcassets */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
@@ -41,6 +43,8 @@
 		107A58E2284FA4E5003D6F2B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		10CFA9AE28503560003DBF63 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		10CFA9B028504144003DBF63 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
+		BCA4F0B3285175C000879A15 /* CustomMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainButton.swift; sourceTree = "<group>"; };
+		BCA4F0B728517BC500879A15 /* CustomSubTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubTitle.swift; sourceTree = "<group>"; };
 		EF1DEE2F2849B795000268C7 /* GilCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GilCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 				EFA7B9352849EB22006671EF /* ComponentsTestView.swift */,
 				10CFA9AE28503560003DBF63 /* CustomTextField.swift */,
 				10CFA9B028504144003DBF63 /* CustomTitle.swift */,
+				BCA4F0B3285175C000879A15 /* CustomMainButton.swift */,
+				BCA4F0B728517BC500879A15 /* CustomSubTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -297,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7B9452849EC54006671EF /* TestHomeView.swift in Sources */,
+				BCA4F0B828517BC500879A15 /* CustomSubTitle.swift in Sources */,
 				107A58D9284FA08B003D6F2B /* register5.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
 				107A58DF284FA0A3003D6F2B /* register8.swift in Sources */,
@@ -307,6 +314,7 @@
 				107A58D1284F98BE003D6F2B /* register1.swift in Sources */,
 				EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */,
 				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
+				BCA4F0B4285175C000879A15 /* CustomMainButton.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
 				10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */,
 				107A58DB284FA094003D6F2B /* register6.swift in Sources */,
@@ -441,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GilCat/Preview Content\"";
+				DEVELOPMENT_TEAM = 664P5JW26B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -448,6 +457,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -469,6 +479,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GilCat/Preview Content\"";
+				DEVELOPMENT_TEAM = 664P5JW26B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -476,6 +487,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
