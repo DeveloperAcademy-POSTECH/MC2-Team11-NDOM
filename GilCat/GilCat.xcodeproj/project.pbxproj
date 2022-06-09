@@ -7,10 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BCA4F0AC285079EE00879A15 /* Register1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AB285079EE00879A15 /* Register1.swift */; };
-		BCA4F0AE28507A2700879A15 /* Register2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AD28507A2700879A15 /* Register2.swift */; };
-		BCA4F0B028507A3400879A15 /* Register8.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0AF28507A3400879A15 /* Register8.swift */; };
-		BCA4F0B228507A7900879A15 /* ViewContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B128507A7900879A15 /* ViewContents.swift */; };
+		107A58D1284F98BE003D6F2B /* register1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D0284F98BE003D6F2B /* register1.swift */; };
+		107A58D3284FA041003D6F2B /* register2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D2284FA041003D6F2B /* register2.swift */; };
+		107A58D5284FA055003D6F2B /* register3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D4284FA055003D6F2B /* register3.swift */; };
+		107A58D7284FA05E003D6F2B /* register4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D6284FA05E003D6F2B /* register4.swift */; };
+		107A58D9284FA08B003D6F2B /* register5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D8284FA08B003D6F2B /* register5.swift */; };
+		107A58DB284FA094003D6F2B /* register6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DA284FA094003D6F2B /* register6.swift */; };
+		107A58DD284FA09C003D6F2B /* register7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DC284FA09C003D6F2B /* register7.swift */; };
+		107A58DF284FA0A3003D6F2B /* register8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58DE284FA0A3003D6F2B /* register8.swift */; };
+		107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58E2284FA4E5003D6F2B /* ColorExtension.swift */; };
+		10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9AE28503560003DBF63 /* CustomTextField.swift */; };
+		10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9B028504144003DBF63 /* CustomTitle.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE362849B796000268C7 /* Assets.xcassets */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
@@ -20,24 +27,20 @@
 		EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7B93A2849EBB9006671EF /* ColorPallete.swift */; };
 		EFA7B9432849EC48006671EF /* TestSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7B9422849EC48006671EF /* TestSupportView.swift */; };
 		EFA7B9452849EC54006671EF /* TestHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7B9442849EC54006671EF /* TestHomeView.swift */; };
-		EFA7B969284B23EC006671EF /* GilCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA7B968284B23EC006671EF /* GilCatTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EFA7B96A284B23EC006671EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EF1DEE272849B795000268C7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EF1DEE2E2849B795000268C7;
-			remoteInfo = GilCat;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		BCA4F0AB285079EE00879A15 /* Register1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register1.swift; sourceTree = "<group>"; };
-		BCA4F0AD28507A2700879A15 /* Register2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register2.swift; sourceTree = "<group>"; };
-		BCA4F0AF28507A3400879A15 /* Register8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register8.swift; sourceTree = "<group>"; };
-		BCA4F0B128507A7900879A15 /* ViewContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewContents.swift; sourceTree = "<group>"; };
+		107A58D0284F98BE003D6F2B /* register1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register1.swift; sourceTree = "<group>"; };
+		107A58D2284FA041003D6F2B /* register2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register2.swift; sourceTree = "<group>"; };
+		107A58D4284FA055003D6F2B /* register3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register3.swift; sourceTree = "<group>"; };
+		107A58D6284FA05E003D6F2B /* register4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register4.swift; sourceTree = "<group>"; };
+		107A58D8284FA08B003D6F2B /* register5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register5.swift; sourceTree = "<group>"; };
+		107A58DA284FA094003D6F2B /* register6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register6.swift; sourceTree = "<group>"; };
+		107A58DC284FA09C003D6F2B /* register7.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register7.swift; sourceTree = "<group>"; };
+		107A58DE284FA0A3003D6F2B /* register8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register8.swift; sourceTree = "<group>"; };
+		107A58E2284FA4E5003D6F2B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		10CFA9AE28503560003DBF63 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		10CFA9B028504144003DBF63 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 		EF1DEE2F2849B795000268C7 /* GilCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GilCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,8 +51,6 @@
 		EFA7B93A2849EBB9006671EF /* ColorPallete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPallete.swift; sourceTree = "<group>"; };
 		EFA7B9422849EC48006671EF /* TestSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSupportView.swift; sourceTree = "<group>"; };
 		EFA7B9442849EC54006671EF /* TestHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeView.swift; sourceTree = "<group>"; };
-		EFA7B966284B23EC006671EF /* GilCatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GilCatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFA7B968284B23EC006671EF /* GilCatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,22 +61,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFA7B963284B23EC006671EF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		107A58CF284F98A0003D6F2B /* Registers */ = {
+			isa = PBXGroup;
+			children = (
+				107A58E4284FAB10003D6F2B /* registerViews */,
+			);
+			path = Registers;
+			sourceTree = "<group>";
+		};
+		107A58E4284FAB10003D6F2B /* registerViews */ = {
+			isa = PBXGroup;
+			children = (
+				107A58D0284F98BE003D6F2B /* register1.swift */,
+				107A58D2284FA041003D6F2B /* register2.swift */,
+				107A58D4284FA055003D6F2B /* register3.swift */,
+				107A58D6284FA05E003D6F2B /* register4.swift */,
+				107A58D8284FA08B003D6F2B /* register5.swift */,
+				107A58DA284FA094003D6F2B /* register6.swift */,
+				107A58DC284FA09C003D6F2B /* register7.swift */,
+				107A58DE284FA0A3003D6F2B /* register8.swift */,
+			);
+			path = registerViews;
+			sourceTree = "<group>";
+		};
 		EF1DEE262849B795000268C7 = {
 			isa = PBXGroup;
 			children = (
 				EFA7B92A2849E8AA006671EF /* .swiftlint.yml */,
 				EF1DEE312849B795000268C7 /* GilCat */,
-				EFA7B967284B23EC006671EF /* GilCatTests */,
 				EF1DEE302849B795000268C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				EF1DEE2F2849B795000268C7 /* GilCat.app */,
-				EFA7B966284B23EC006671EF /* GilCatTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,10 +111,6 @@
 				EFA7B9322849EAB7006671EF /* Sources */,
 				EFA7B92C2849E9EA006671EF /* Resources */,
 				EF1DEE382849B796000268C7 /* Preview Content */,
-				BCA4F0AB285079EE00879A15 /* Register1.swift */,
-				BCA4F0AD28507A2700879A15 /* Register2.swift */,
-				BCA4F0AF28507A3400879A15 /* Register8.swift */,
-				BCA4F0B128507A7900879A15 /* ViewContents.swift */,
 			);
 			path = GilCat;
 			sourceTree = "<group>";
@@ -123,6 +134,7 @@
 		EFA7B92D2849EA09006671EF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				107A58CF284F98A0003D6F2B /* Registers */,
 				EFA7B93C2849EBD6006671EF /* Home */,
 			);
 			path = Screen;
@@ -142,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EFA7B9372849EB5C006671EF /* TestExtension.swift */,
+				107A58E2284FA4E5003D6F2B /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -150,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				EFA7B9352849EB22006671EF /* ComponentsTestView.swift */,
+				10CFA9AE28503560003DBF63 /* CustomTextField.swift */,
+				10CFA9B028504144003DBF63 /* CustomTitle.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -188,14 +203,6 @@
 			path = SupportViews;
 			sourceTree = "<group>";
 		};
-		EFA7B967284B23EC006671EF /* GilCatTests */ = {
-			isa = PBXGroup;
-			children = (
-				EFA7B968284B23EC006671EF /* GilCatTests.swift */,
-			);
-			path = GilCatTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,24 +224,6 @@
 			productReference = EF1DEE2F2849B795000268C7 /* GilCat.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EFA7B965284B23EC006671EF /* GilCatTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EFA7B96C284B23EC006671EF /* Build configuration list for PBXNativeTarget "GilCatTests" */;
-			buildPhases = (
-				EFA7B962284B23EC006671EF /* Sources */,
-				EFA7B963284B23EC006671EF /* Frameworks */,
-				EFA7B964284B23EC006671EF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EFA7B96B284B23EC006671EF /* PBXTargetDependency */,
-			);
-			name = GilCatTests;
-			productName = GilCatTests;
-			productReference = EFA7B966284B23EC006671EF /* GilCatTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,10 +236,6 @@
 				TargetAttributes = {
 					EF1DEE2E2849B795000268C7 = {
 						CreatedOnToolsVersion = 13.4;
-					};
-					EFA7B965284B23EC006671EF = {
-						CreatedOnToolsVersion = 13.4;
-						TestTargetID = EF1DEE2E2849B795000268C7;
 					};
 				};
 			};
@@ -268,7 +253,6 @@
 			projectRoot = "";
 			targets = (
 				EF1DEE2E2849B795000268C7 /* GilCat */,
-				EFA7B965284B23EC006671EF /* GilCatTests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,13 +265,6 @@
 				EFA7B92B2849E8AA006671EF /* .swiftlint.yml in Resources */,
 				EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */,
 				EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFA7B964284B23EC006671EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,35 +297,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFA7B9452849EC54006671EF /* TestHomeView.swift in Sources */,
-				BCA4F0AE28507A2700879A15 /* Register2.swift in Sources */,
-				BCA4F0B028507A3400879A15 /* Register8.swift in Sources */,
+				107A58D9284FA08B003D6F2B /* register5.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
+				107A58DF284FA0A3003D6F2B /* register8.swift in Sources */,
+				107A58D3284FA041003D6F2B /* register2.swift in Sources */,
+				10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */,
 				EFA7B9432849EC48006671EF /* TestSupportView.swift in Sources */,
-				BCA4F0AC285079EE00879A15 /* Register1.swift in Sources */,
-				BCA4F0B228507A7900879A15 /* ViewContents.swift in Sources */,
 				EFA7B9362849EB22006671EF /* ComponentsTestView.swift in Sources */,
+				107A58D1284F98BE003D6F2B /* register1.swift in Sources */,
 				EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */,
+				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EFA7B962284B23EC006671EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFA7B969284B23EC006671EF /* GilCatTests.swift in Sources */,
+				10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */,
+				107A58DB284FA094003D6F2B /* register6.swift in Sources */,
+				107A58D5284FA055003D6F2B /* register3.swift in Sources */,
+				107A58DD284FA09C003D6F2B /* register7.swift in Sources */,
+				107A58D7284FA05E003D6F2B /* register4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EFA7B96B284B23EC006671EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EF1DEE2E2849B795000268C7 /* GilCat */;
-			targetProxy = EFA7B96A284B23EC006671EF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		EF1DEE3B2849B796000268C7 /* Debug */ = {
@@ -401,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -455,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -478,10 +446,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,7 +457,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -508,10 +474,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -521,41 +485,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
-		EFA7B96D284B23EC006671EF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woody.GilCatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GilCat.app/GilCat";
-			};
-			name = Debug;
-		};
-		EFA7B96E284B23EC006671EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.woody.GilCatTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GilCat.app/GilCat";
 			};
 			name = Release;
 		};
@@ -576,15 +506,6 @@
 			buildConfigurations = (
 				EF1DEE3E2849B796000268C7 /* Debug */,
 				EF1DEE3F2849B796000268C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EFA7B96C284B23EC006671EF /* Build configuration list for PBXNativeTarget "GilCatTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EFA7B96D284B23EC006671EF /* Debug */,
-				EFA7B96E284B23EC006671EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
