@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ComponentsTestView: View {
     var body: some View {
-        CustomTitle().customTitle(TitleText: "히히히히히히")
+        CustomTitle().customTitle(titleText: "히히히히히히")
     }
 }
 

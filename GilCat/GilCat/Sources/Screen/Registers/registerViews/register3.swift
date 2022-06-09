@@ -1,12 +1,12 @@
 import SwiftUI
 
-struct register3: View {
+struct Register3: View {
     var body: some View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
             VStack {
                 HStack {
-                    CustomTitle().customTitle(TitleText: "이름").padding()
+                    CustomTitle().customTitle(titleText: "이름").padding()
                     Spacer()
                 }
                 CustomTextField(placeHolder: "고양이 이름을 지어볼까요?").padding()
@@ -18,8 +18,8 @@ struct register3: View {
         }
     }
 
-struct register3_Previews: PreviewProvider {
+struct Register3_Previews: PreviewProvider {
     static var previews: some View {
-        register3()
+        Register3()
     }
 }

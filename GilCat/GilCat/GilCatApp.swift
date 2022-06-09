@@ -11,7 +11,7 @@ import SwiftUI
 struct GilCatApp: App {
     var body: some Scene {
         WindowGroup {
-            register3()
+            Register2()
         }
     }
 }
