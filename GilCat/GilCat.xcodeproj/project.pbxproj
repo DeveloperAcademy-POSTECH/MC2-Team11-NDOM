@@ -20,6 +20,8 @@
 		10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFA9B028504144003DBF63 /* CustomTitle.swift */; };
 		BCA4F0B4285175C000879A15 /* CustomMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B3285175C000879A15 /* CustomMainButton.swift */; };
 		BCA4F0B828517BC500879A15 /* CustomSubTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B728517BC500879A15 /* CustomSubTitle.swift */; };
+		BCA4F0BA2851809100879A15 /* register9.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0B92851809100879A15 /* register9.swift */; };
+		BCA4F0BC2851809B00879A15 /* register10.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4F0BB2851809B00879A15 /* register10.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE372849B796000268C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE362849B796000268C7 /* Assets.xcassets */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
@@ -45,6 +47,8 @@
 		10CFA9B028504144003DBF63 /* CustomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitle.swift; sourceTree = "<group>"; };
 		BCA4F0B3285175C000879A15 /* CustomMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainButton.swift; sourceTree = "<group>"; };
 		BCA4F0B728517BC500879A15 /* CustomSubTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubTitle.swift; sourceTree = "<group>"; };
+		BCA4F0B92851809100879A15 /* register9.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register9.swift; sourceTree = "<group>"; };
+		BCA4F0BB2851809B00879A15 /* register10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = register10.swift; sourceTree = "<group>"; };
 		EF1DEE2F2849B795000268C7 /* GilCat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GilCat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				107A58DA284FA094003D6F2B /* register6.swift */,
 				107A58DC284FA09C003D6F2B /* register7.swift */,
 				107A58DE284FA0A3003D6F2B /* register8.swift */,
+				BCA4F0B92851809100879A15 /* register9.swift */,
+				BCA4F0BB2851809B00879A15 /* register10.swift */,
 			);
 			path = registerViews;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				107A58D9284FA08B003D6F2B /* register5.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
 				107A58DF284FA0A3003D6F2B /* register8.swift in Sources */,
+				BCA4F0BC2851809B00879A15 /* register10.swift in Sources */,
 				107A58D3284FA041003D6F2B /* register2.swift in Sources */,
 				10CFA9AF28503560003DBF63 /* CustomTextField.swift in Sources */,
 				EFA7B9432849EC48006671EF /* TestSupportView.swift in Sources */,
@@ -314,6 +321,7 @@
 				107A58D1284F98BE003D6F2B /* register1.swift in Sources */,
 				EFA7B93B2849EBB9006671EF /* ColorPallete.swift in Sources */,
 				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
+				BCA4F0BA2851809100879A15 /* register9.swift in Sources */,
 				BCA4F0B4285175C000879A15 /* CustomMainButton.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
 				10CFA9B128504144003DBF63 /* CustomTitle.swift in Sources */,
