@@ -40,7 +40,7 @@ struct Register2: View {
                 Button {
                 
                 } label: {
-                    CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.orange)
+                    CustomMainButton(text: "시작하기", foreground: Color.white, background: Color.lightOrange)
                 }
             }
         }
