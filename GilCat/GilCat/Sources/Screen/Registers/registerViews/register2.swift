@@ -1,10 +1,3 @@
-//
-//   register2.swift
-//  GilCat
-//
-//  Created by 김연호 on 2022/06/08.
-//
-
 import SwiftUI
 
 struct Register2: View {

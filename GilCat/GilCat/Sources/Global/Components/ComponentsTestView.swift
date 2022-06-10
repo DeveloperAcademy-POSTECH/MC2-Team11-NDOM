@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ComponentsTestView: View {
     var body: some View {
-        CustomTitle().customTitle(titleText: "히히히히히히")
+        Color.backgroundColor.ignoresSafeArea()
+        CustomPicker(firstSelect: "첫번째", secondSelect: "두번째", isClick: false)
     }
 }
 

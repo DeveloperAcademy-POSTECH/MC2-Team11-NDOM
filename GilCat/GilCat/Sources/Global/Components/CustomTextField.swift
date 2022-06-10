@@ -1,19 +1,20 @@
 import SwiftUI
 
 struct CustomTextField: View {
-    @State var catName: String = ""
+
+    @State var catInfo: String = ""
     @State var placeHolder: String = ""
     
     private func customTextField() -> some View {
         return ZStack {
-            if catName.isEmpty {
+            if catInfo.isEmpty {
                 HStack {
                     Text("\(placeHolder)").foregroundColor(.gray).padding()
                 
                 Spacer()
                 }
             }
-            TextField("", text: $catName).padding()
+            TextField("",text: $catInfo).padding()
         }
     }
 

@@ -1,10 +1,3 @@
-//
-//  register7.swift
-//  GilCat
-//
-//  Created by 김연호 on 2022/06/08.
-//
-
 import SwiftUI
 
 struct Register7: View {

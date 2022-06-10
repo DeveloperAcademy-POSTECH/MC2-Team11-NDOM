@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Register3: View {
+struct register3: View {
     var body: some View {
         ZStack {
             Color.backgroundColor.ignoresSafeArea()
@@ -12,14 +12,22 @@ struct Register3: View {
                 CustomTextField(placeHolder: "고양이 이름을 지어볼까요?").padding()
                 
                 Spacer().frame(height: 350)
-                }
+            } 
+         }
+     }
+ }
+
+                CustomTextField(placeHolder: "고양이 이름을 지어볼까요?").padding([.leading, .bottom])
                 
+                Spacer().frame(height: 300)
+                
+                CustomButton()
             }
         }
     }
-
-struct Register3_Previews: PreviewProvider {
+}
+struct register3_Previews: PreviewProvider {
     static var previews: some View {
-        Register3()
+        register3()
     }
 }

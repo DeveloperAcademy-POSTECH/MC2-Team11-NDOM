@@ -1,20 +1,30 @@
-//
-//  register5.swift
-//  GilCat
-//
-//  Created by 김연호 on 2022/06/08.
-//
-
 import SwiftUI
 
-struct Register5: View {
+struct register5: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+        Color.backgroundColor.ignoresSafeArea()
+        
+            VStack {
+                HStack {
+                    CustomTitle(titleText: "나이").padding([.top, .leading])
+                    Spacer()
+                }
+                CustomTextField(placeHolder: "나비는 몇 살인가요?").padding([.leading, .bottom]).keyboardType(.numberPad)
+                	
+                Spacer().frame(height: 300)
+                
+                HStack {
+                    //여기에 navigationLink로 버튼처럼 만들어야 하지않나?
+                    CustomButton()
+                }
+            }
+        }
     }
 }
 
-struct Register5_Previews: PreviewProvider {
+struct register5_Previews: PreviewProvider {
     static var previews: some View {
-        Register5()
+        register5()
     }
 }
