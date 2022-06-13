@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RegisterStart: View {
-    @State var isLinkActive = false
     @EnvironmentObject var catInfo: GilCatInfoList
+//    @Binding var buildNavigationStack: Bool
+    @State var isLinkActive = false
+
     var body: some View {
         // Todo: 현재는 네비게이션뷰로 다른 뷰들을 연결했지만 괜찮은 애니메이션 전환 요소를 찾으면 바꿀 예정입니다.
         NavigationView {
@@ -28,7 +30,7 @@ struct RegisterStart: View {
                 .padding()
                 Spacer()
                 // 메인 버튼
-                NavigationLink(destination: RegisterCode(), isActive: $isLinkActive) {
+                NavigationLink(destination: RegisterCode($isLinkActive), isActive: $isLinkActive) {
                     Button {
                         isLinkActive = true
                         // 고양이 정보를 저장하는 새로운 객체 생성
@@ -41,6 +43,7 @@ struct RegisterStart: View {
                     }
                     .padding()
                 }
+                .isDetailLink(false)
             }
             .background(Color.backgroundColor)
             .navigationBarTitle("목차", displayMode: .inline)

@@ -1,14 +1,19 @@
 import SwiftUI
 
 struct RegisterGender: View {
-    @State var isLinkActive = false
     @EnvironmentObject var catInfo: GilCatInfoList
+    @Binding var buildNavigationStack: Bool
+    @State var isLinkActive = false
     @State var genderChoice: GilCatPicker.Choice = .first
     @State var TNRChoice: GilCatPicker.Choice = .first
     let genderFirstChoice = "암컷"
     let genderSecondChoice = "수컷"
     let TNRFirstChoice = "❌"
     let TNRSecondChoice = "⭕️"
+    
+    init(_ buildNavigationStack: Binding<Bool>) {
+        self._buildNavigationStack = buildNavigationStack
+    }
     
     var body: some View {
         ZStack {
@@ -28,7 +33,7 @@ struct RegisterGender: View {
                 GilCatPicker(isClick: $TNRChoice, firstSelect: TNRFirstChoice, secondSelect: TNRSecondChoice)
                 
                 Spacer()
-                NavigationLink(destination: RegisterAge(), isActive: $isLinkActive) {
+                NavigationLink(destination: RegisterAge($buildNavigationStack), isActive: $isLinkActive) {
                     Button {
                         // 어떤게 클릭됐는지에 따라 값 줘야함
                         if genderChoice == .first {
@@ -47,6 +52,7 @@ struct RegisterGender: View {
                     }
                     .padding()
                 }
+                .isDetailLink(false)
             }
         }
         .navigationBarTitle("성별 및 중성화", displayMode: .inline)
@@ -73,20 +79,6 @@ struct RegisterGender: View {
 }
 struct RegisterGender_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterGender().environmentObject(GilCatInfoList().self)
+        RegisterGender(.constant(false)).environmentObject(GilCatInfoList().self)
     }
 }
-
-// ZStack {
-//    Rectangle().frame(width: 200, height: 50).cornerRadius(20).foregroundColor(.white).offset(x: isClick ? 100 : -100).onTapGesture {
-//        //하얀색과 배경이 같이 클릭될 시 안 움직이게 하는 방법
-//    }
-//    HStack {
-//        Text(male).offset(x: -70).foregroundColor(isClick ? .white : .buttonColor)
-//        Text(female).offset(x: 70).foregroundColor(isClick ? .buttonColor : .white)
-//    }//클릭시 좌표값에 따라 도형이 안움직이게 해야함
-// }.frame(width: 350, height: 50).background(Color.pickerColor).cornerRadius(20).onTapGesture {
-//        withAnimation {
-//        isClick.toggle()
-//        }
-//    }

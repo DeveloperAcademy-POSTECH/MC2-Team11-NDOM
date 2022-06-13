@@ -1,11 +1,16 @@
 import SwiftUI
 
 struct RegisterName: View {
-    @State var inputText = ""
-    @State var isLinkActive = false
-    @State var isAlertActive = false
-    @FocusState var isFocused: Bool?
     @EnvironmentObject var catInfo: GilCatInfoList
+    @FocusState var isFocused: Bool?
+    @Binding var buildNavigationStack: Bool
+    @State var isLinkActive = false
+    @State var inputText = ""
+    @State var isAlertActive = false
+    
+    init(_ buildNavigationStack: Binding<Bool>) {
+        self._buildNavigationStack = buildNavigationStack
+    }
     
     var body: some View {
         ZStack {
@@ -19,7 +24,7 @@ struct RegisterName: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: RegisterGender(), isActive: $isLinkActive) {
+                NavigationLink(destination: RegisterGender($buildNavigationStack), isActive: $isLinkActive) {
                     Button {
                         // 이름이 입력이 안됐다면, 팝업 창 보여주기
                         if inputText.isEmpty {
@@ -33,6 +38,7 @@ struct RegisterName: View {
                     }
                     .padding()
                 }
+                .isDetailLink(false)
             }
         }
         .navigationBarTitle("이름", displayMode: .inline)
@@ -54,6 +60,6 @@ struct RegisterName: View {
 }
 struct RegisterName_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterName().environmentObject(GilCatInfoList().self)
+        RegisterName(.constant(false)).environmentObject(GilCatInfoList().self)
     }
 }

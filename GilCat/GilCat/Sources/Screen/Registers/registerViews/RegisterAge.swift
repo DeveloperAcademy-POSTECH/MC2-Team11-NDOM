@@ -7,13 +7,18 @@
 import SwiftUI
 
 struct RegisterAge: View {
+    @EnvironmentObject var catInfo: GilCatInfoList
+    @FocusState var isFocused: Int?
+    @Binding var buildNavigationStack: Bool
+    @State var isLinkActive = false
     @State var inputAge = ""
     @State var inputType = ""
-    @State var isLinkActive = false
     @State var isShowingType = false
     @State var isFirstClick = true
-    @FocusState var isFocused: Int?
-    @EnvironmentObject var catInfo: GilCatInfoList
+    
+    init(_ buildNavigationStack: Binding<Bool>) {
+        self._buildNavigationStack = buildNavigationStack
+    }
     
     var body: some View {
         ZStack {
@@ -39,7 +44,7 @@ struct RegisterAge: View {
                 }
                 Spacer()
                 
-                NavigationLink(destination: RegisterAvatar(), isActive: $isLinkActive) {
+                NavigationLink(destination: RegisterAvatar($buildNavigationStack), isActive: $isLinkActive) {
                     HStack {
                         Button {
                             if isFirstClick == false {
@@ -67,6 +72,7 @@ struct RegisterAge: View {
                     }
                     .padding()
                 }
+                .isDetailLink(false)
             }
             .navigationBarTitle("나이", displayMode: .inline)
             .focused($isFocused, equals: 1)
@@ -90,6 +96,6 @@ struct RegisterAge: View {
 
 struct RegisterAge_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterAge().environmentObject(GilCatInfoList().self)
+        RegisterAge(.constant(false)).environmentObject(GilCatInfoList().self)
     }
 }

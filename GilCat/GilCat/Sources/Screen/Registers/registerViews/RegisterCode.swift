@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct RegisterCode: View {
+    @EnvironmentObject var catInfo: GilCatInfoList
     @FocusState var focusedCode: Int?
+    @Binding var buildNavigationStack: Bool
     @State var isLinkActive = false
     @State var isAlertActice = false
     @State var codeInput = ["", "", "", "", "", ""]
-    @EnvironmentObject var catInfo: GilCatInfoList
     
-    init() {
+    init(_ buildNavigationStack: Binding<Bool>) {
         UITextView.appearance().backgroundColor = .clear
+        self._buildNavigationStack = buildNavigationStack
     }
     
     var body: some View {
@@ -41,7 +43,7 @@ struct RegisterCode: View {
             .padding()
             Spacer()
             // 메인 버튼
-            NavigationLink(destination: RegisterName(), isActive: $isLinkActive) {
+            NavigationLink(destination: RegisterName($buildNavigationStack), isActive: $isLinkActive) {
                 HStack {
                     Button {
                         isLinkActive = true
@@ -63,6 +65,7 @@ struct RegisterCode: View {
                 }
                 .padding()
             }
+            .isDetailLink(false)
         }
         .navigationBarTitle("코드", displayMode: .inline)
         .background(Color.backgroundColor)
@@ -104,6 +107,6 @@ struct RegisterCode: View {
 
 struct RegisterCode_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterCode()
+        RegisterCode(.constant(false))
     }
 }
