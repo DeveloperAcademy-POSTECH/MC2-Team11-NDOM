@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		042B0CDF285828E80091D9A5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0CDE285828E80091D9A5 /* SwiftUIView.swift */; };
+		04C19AB42859A86400482A26 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C19AB32859A86400482A26 /* Onboarding.swift */; };
+		04C19AB62859B04000482A26 /* FirstStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C19AB52859B04000482A26 /* FirstStart.swift */; };
 		04F0774828518C7E00339172 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0774728518C7E00339172 /* CodeView.swift */; };
 		106598C22856DD2C00F44728 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 106598C12856DD2C00F44728 /* PartialSheet */; };
 		106598C52856DD7200F44728 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 106598C42856DD7200F44728 /* ConfettiSwiftUI */; };
@@ -83,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		042B0CDE285828E80091D9A5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		04C19AB32859A86400482A26 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		04C19AB52859B04000482A26 /* FirstStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStart.swift; sourceTree = "<group>"; };
 		04F0774728518C7E00339172 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		107A58D0284F98BE003D6F2B /* RegisterStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStart.swift; sourceTree = "<group>"; };
 		107A58D2284FA041003D6F2B /* RegisterCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCode.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 				042B0CDE285828E80091D9A5 /* SwiftUIView.swift */,
 			);
 			path = Logs;
+			sourceTree = "<group>";
+		};
+		04C19AB02859A83100482A26 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				04C19AB52859B04000482A26 /* FirstStart.swift */,
+				04C19AB32859A86400482A26 /* Onboarding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		107A58CF284F98A0003D6F2B /* Registers */ = {
@@ -358,6 +371,7 @@
 		EFA7B92D2849EA09006671EF /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				04C19AB02859A83100482A26 /* Onboarding */,
 				EFA7B93C2849EBD6006671EF /* Home */,
 				58B21B112856FFA700205AE5 /* MainPopUp */,
 				107A58CF284F98A0003D6F2B /* Registers */,
@@ -601,6 +615,7 @@
 				EF97BE5228585ECB00D1B37E /* Home.swift in Sources */,
 				BCC605D52859C466004FD48F /* NoteMemoWriteView.swift in Sources */,
 				EF97BE432858157300D1B37E /* NetworkLogging.swift in Sources */,
+				04C19AB42859A86400482A26 /* Onboarding.swift in Sources */,
 				107A58D1284F98BE003D6F2B /* RegisterStart.swift in Sources */,
 				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
 				58E7FF872858FD870070D58B /* ScrollSnap.swift in Sources */,
@@ -624,6 +639,7 @@
 				10CFA9B128504144003DBF63 /* GilCatTitle.swift in Sources */,
 				EF97BE622858841800D1B37E /* GilCatSizeInformation.swift in Sources */,
 				EF97BE5B28587B0600D1B37E /* HomeViewModel.swift in Sources */,
+				04C19AB62859B04000482A26 /* FirstStart.swift in Sources */,
 				BC517A032852DAEE00992BC5 /* RegisterFinish.swift in Sources */,
 				107A58D5284FA055003D6F2B /* RegisterName.swift in Sources */,
 				EF97BE3128579C8F00D1B37E /* API.swift in Sources */,
