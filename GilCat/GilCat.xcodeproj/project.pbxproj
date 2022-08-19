@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		042B0CDF285828E80091D9A5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0CDE285828E80091D9A5 /* SwiftUIView.swift */; };
 		04DE0D4C285AC31B00B10126 /* MergeCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE0D4B285AC31B00B10126 /* MergeCat.swift */; };
-		04F0774828518C7E00339172 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0774728518C7E00339172 /* CodeView.swift */; };
 		106598C22856DD2C00F44728 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 106598C12856DD2C00F44728 /* PartialSheet */; };
 		106598C52856DD7200F44728 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 106598C42856DD7200F44728 /* ConfettiSwiftUI */; };
 		107A58D1284F98BE003D6F2B /* RegisterStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107A58D0284F98BE003D6F2B /* RegisterStart.swift */; };
@@ -84,7 +83,6 @@
 /* Begin PBXFileReference section */
 		042B0CDE285828E80091D9A5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		04DE0D4B285AC31B00B10126 /* MergeCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeCat.swift; sourceTree = "<group>"; };
-		04F0774728518C7E00339172 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		107A58D0284F98BE003D6F2B /* RegisterStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStart.swift; sourceTree = "<group>"; };
 		107A58D2284FA041003D6F2B /* RegisterCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCode.swift; sourceTree = "<group>"; };
 		107A58D4284FA055003D6F2B /* RegisterName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterName.swift; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 		58B21B112856FFA700205AE5 /* MainPopUp */ = {
 			isa = PBXGroup;
 			children = (
-				04F0774728518C7E00339172 /* CodeView.swift */,
 				58B21B122856FFF900205AE5 /* CatSelectPopUpView.swift */,
 				04DE0D4B285AC31B00B10126 /* MergeCat.swift */,
 			);
@@ -581,7 +578,6 @@
 				107A58D9284FA08B003D6F2B /* RegisterAge.swift in Sources */,
 				042B0CDF285828E80091D9A5 /* SwiftUIView.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
-				04F0774828518C7E00339172 /* CodeView.swift in Sources */,
 				BC5179FD2852CE0500992BC5 /* GilCatDescription.swift in Sources */,
 				EF97BE542858646500D1B37E /* HomeViewController.swift in Sources */,
 				BC5179F92852CC7100992BC5 /* GilCatImages.swift in Sources */,
