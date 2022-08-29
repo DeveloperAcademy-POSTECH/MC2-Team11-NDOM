@@ -8,7 +8,7 @@
 import SwiftUI
 
 // 수많은 고양이 이미지와 색깔을 쉽게 가져오게 하기 위해 만든 뷰
-enum GilCatColor: CaseIterable {
+enum GilCatColor: CaseIterable, Codable {
     case gray, brown, peach, pink, red, orange, gold, green, emerald, sky, navy, purple
     // 해당 색깔을 반환
     var color: Color {

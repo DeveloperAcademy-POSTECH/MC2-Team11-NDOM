@@ -10,7 +10,7 @@ import Foundation
 // MARK: GilCatMapCase
 // - 고양이 위치를 가리키는 enum 입니다.
 // -
-enum GilCatMapCase {
+enum GilCatMapCase: Codable {
     case first
     case second
     case third

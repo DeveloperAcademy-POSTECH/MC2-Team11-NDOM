@@ -92,7 +92,15 @@ struct RegisterFinish: View {
     @ViewBuilder
     private func getMainButtomView() -> some View {
         Button {
-            // TODO: 완성된 고양이 정보 객체를 서버에 보내기
+            let newModel = newCat.makeGilCatInfoModel()
+            FirebaseTool.instance.uploadCat(newCat: newModel) { error in
+                if let error = error {
+                    print("새로운 고양이 업로드 에러: \(error)")
+                } else {
+                    print("새로운 고양이 업로드 성공")
+                    HomeViewModel.instance.catLists.append(newModel)
+                }
+            }
             isActiveForPopToRoot = false
             newCat.initcat()
         } label: {
@@ -145,6 +153,7 @@ struct RegisterFinish: View {
 
 struct RegisterFinish_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterFinish(popToRoot: .constant(false)).environmentObject(NewCatRegisterViewModel())
+        RegisterFinish(popToRoot: .constant(false))
+            .environmentObject(NewCatRegisterViewModel())
     }
 }

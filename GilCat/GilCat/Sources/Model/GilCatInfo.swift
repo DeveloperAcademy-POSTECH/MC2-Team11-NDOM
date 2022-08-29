@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 // MARK: 한 마리 고양이 정보 객체
-struct GilCatInfo {
+struct GilCatInfo: Codable {
     var name: String                = ""            // 이름
     var age: String                 = ""            // 나이
     var gender: GilCatGender        = .male         // 성별
@@ -26,6 +26,22 @@ struct GilCatInfo {
     var healthTagInfo: [String]     = []
     var memoInfo: [MemoInfo]        = []
     var gilCatMapInformation: GilCatMapCase = .none
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case age
+        case gender
+        case neutralized
+        case type
+        case avatarColor
+        case avatarBodyIndex
+        case dietInfo
+        case waterInfo
+        case snackCount
+        case healthTagInfo
+        case memoInfo
+        case gilCatMapInformation
+    }
 
 }
 
@@ -46,7 +62,7 @@ extension GilCatInfo {
 }
 
 // MARK: 먹이 정보
-struct DietInfo {
+struct DietInfo: Codable {
     var name: String
     var timeIndex: Int
     var time: String {
@@ -55,10 +71,16 @@ struct DietInfo {
     var amount: Amount
     
     static let initCat: DietInfo = DietInfo(name: "-", timeIndex: 28, amount: .mid)
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case timeIndex
+        case amount
+    }
 }
 
 // MARK: 물 정보
-struct WaterInfo {
+struct WaterInfo: Codable {
     var timeIndex: Int
     var time: String {
         GilCatTimePicker.testTime[timeIndex]
@@ -66,17 +88,28 @@ struct WaterInfo {
     var amount: Amount
     
     static let initCat: WaterInfo = WaterInfo(timeIndex: 28, amount: .mid)
+    
+    enum CodingKeys: String, CodingKey {
+        case timeIndex
+        case amount
+    }
 }
 
 // MARK: 메모 정보 
-struct MemoInfo: Hashable {
+struct MemoInfo: Hashable, Codable {
     var date: String
     var time: String
     var content: String
+    
+    enum CodingKeys: String, CodingKey {
+        case date
+        case time
+        case content
+    }
 }
 
 // MARK: 태그 정보
-struct HealthTag: Hashable {
+struct HealthTag: Hashable, Codable {
     init(_ text: String, isClicked: Bool = false) {
         self.text = text
         self.isClicked = isClicked
@@ -84,9 +117,15 @@ struct HealthTag: Hashable {
     var id = UUID().uuidString
     var text: String
     var isClicked = false
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text
+        case isClicked
+    }
 }
 
-enum Amount {
+enum Amount: Codable {
     case full
     case mid
     case less
@@ -103,7 +142,7 @@ enum Amount {
     }
 }
 
-enum GilCatGender: String {
+enum GilCatGender: String, Codable {
     case male
     case female
 }

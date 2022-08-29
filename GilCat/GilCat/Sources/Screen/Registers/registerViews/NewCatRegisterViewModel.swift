@@ -32,4 +32,19 @@ class NewCatRegisterViewModel: ObservableObject {
         self.avatarColor = .gray
         self.avatarBodyIndex = 0
     }
+    
+    func makeGilCatInfoModel() -> GilCatInfo {
+        var gilCatInfo = GilCatInfo()
+        gilCatInfo.name = name
+        gilCatInfo.age = age
+        gilCatInfo.gender = gender
+        gilCatInfo.neutralized = neutralized
+        gilCatInfo.type = type
+        gilCatInfo.avatarColor = avatarColor
+        gilCatInfo.avatarBodyIndex = avatarBodyIndex
+        
+        
+        
+        return gilCatInfo
+    }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeContainer: UIViewControllerRepresentable {
     @ObservedObject var viewModel: HomeViewModel
+    @State var myController: HomeViewController?
     
     func makeUIViewController(context: Context) -> some UIViewController {
         let storyboardName = String(describing: "HomeViewController")
@@ -16,8 +17,13 @@ struct HomeContainer: UIViewControllerRepresentable {
         let controller = storyboard.instantiateViewController(identifier: storyboardName)
         guard let homeViewContoller = controller as? HomeViewController else { fatalError() }
         homeViewContoller.viewModel = viewModel
+        DispatchQueue.main.async {
+            myController = homeViewContoller
+        }
         return homeViewContoller
     }
     
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) { }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        myController?.updateList()
+    }
 }

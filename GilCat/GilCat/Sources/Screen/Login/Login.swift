@@ -28,7 +28,7 @@ struct Login: View {
                     nicknameTextField(name: nickName)
                     checkValidNickname(network: checkNetwork, duplicate: checkName, name: nickName)
                     Spacer()
-                    NavigationLink(destination: Home(viewModel: HomeViewModel())) {
+                    NavigationLink(destination: Home(viewModel: HomeViewModel.instance)) {
                         createNicknameButton()
                     }
                     .disabled(!checkNetwork || checkName || nickName.count > 8 || nickName.count < 2)

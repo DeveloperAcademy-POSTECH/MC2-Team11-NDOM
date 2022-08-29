@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		042B0CDF285828E80091D9A5 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042B0CDE285828E80091D9A5 /* SwiftUIView.swift */; };
 		04DE0D4C285AC31B00B10126 /* MergeCat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DE0D4B285AC31B00B10126 /* MergeCat.swift */; };
 		04F0774828518C7E00339172 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F0774728518C7E00339172 /* CodeView.swift */; };
 		106598C22856DD2C00F44728 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 106598C12856DD2C00F44728 /* PartialSheet */; };
@@ -43,19 +42,17 @@
 		BC5179FF2852CE2500992BC5 /* GilCatMainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5179FE2852CE2500992BC5 /* GilCatMainButton.swift */; };
 		BC517A032852DAEE00992BC5 /* RegisterFinish.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC517A022852DAEE00992BC5 /* RegisterFinish.swift */; };
 		BC517A0A2853769D00992BC5 /* GilCatInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC517A092853769D00992BC5 /* GilCatInfo.swift */; };
+		BC694A4D28BC3F8400E69C4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC694A4C28BC3F8400E69C4E /* GoogleService-Info.plist */; };
+		BC694A5028BC414900E69C4E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BC694A4F28BC414900E69C4E /* FirebaseFirestore */; };
+		BC694A5228BC414900E69C4E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC694A5128BC414900E69C4E /* FirebaseFirestoreSwift */; };
+		BC694A5428BC414900E69C4E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC694A5328BC414900E69C4E /* FirebaseStorage */; };
+		BC694A5628BC4C8100E69C4E /* FirebaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */; };
 		BCC605CD2858C6A9004FD48F /* NewCatRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605CC2858C6A9004FD48F /* NewCatRegisterViewModel.swift */; };
 		BCC605D32859AF78004FD48F /* NoteTagEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605D22859AF78004FD48F /* NoteTagEdit.swift */; };
 		BCC605D52859C466004FD48F /* NoteMemoWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605D42859C466004FD48F /* NoteMemoWrite.swift */; };
 		EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF1DEE322849B795000268C7 /* GilCatApp.swift */; };
 		EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF1DEE392849B796000268C7 /* Preview Assets.xcassets */; };
-		EF97BE3128579C8F00D1B37E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE3028579C8F00D1B37E /* API.swift */; };
-		EF97BE3428579D1300D1B37E /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EF97BE3328579D1300D1B37E /* Moya */; };
-		EF97BE37285808EA00D1B37E /* UsersAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE36285808EA00D1B37E /* UsersAPI.swift */; };
-		EF97BE3A28580E2100D1B37E /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE3928580E2100D1B37E /* AuthAPI.swift */; };
 		EF97BE3E285811A400D1B37E /* EnCodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE3D285811A400D1B37E /* EnCodable+.swift */; };
-		EF97BE412858151B00D1B37E /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE402858151B00D1B37E /* NetworkProvider.swift */; };
-		EF97BE432858157300D1B37E /* NetworkLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE422858157300D1B37E /* NetworkLogging.swift */; };
-		EF97BE472858194300D1B37E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE462858194300D1B37E /* AuthService.swift */; };
 		EF97BE5228585ECB00D1B37E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE5128585ECB00D1B37E /* Home.swift */; };
 		EF97BE542858646500D1B37E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF97BE532858646500D1B37E /* HomeViewController.swift */; };
 		EF97BE562858647400D1B37E /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF97BE552858647400D1B37E /* HomeViewController.storyboard */; };
@@ -82,7 +79,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		042B0CDE285828E80091D9A5 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		04DE0D4B285AC31B00B10126 /* MergeCat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeCat.swift; sourceTree = "<group>"; };
 		04F0774728518C7E00339172 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		107A58D0284F98BE003D6F2B /* RegisterStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStart.swift; sourceTree = "<group>"; };
@@ -116,6 +112,8 @@
 		BC5179FE2852CE2500992BC5 /* GilCatMainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatMainButton.swift; sourceTree = "<group>"; };
 		BC517A022852DAEE00992BC5 /* RegisterFinish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFinish.swift; sourceTree = "<group>"; };
 		BC517A092853769D00992BC5 /* GilCatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatInfo.swift; sourceTree = "<group>"; };
+		BC694A4C28BC3F8400E69C4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTool.swift; sourceTree = "<group>"; };
 		BCC605CC2858C6A9004FD48F /* NewCatRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatRegisterViewModel.swift; sourceTree = "<group>"; };
 		BCC605D22859AF78004FD48F /* NoteTagEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTagEdit.swift; sourceTree = "<group>"; };
 		BCC605D42859C466004FD48F /* NoteMemoWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMemoWrite.swift; sourceTree = "<group>"; };
@@ -123,13 +121,7 @@
 		EF1DEE322849B795000268C7 /* GilCatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatApp.swift; sourceTree = "<group>"; };
 		EF1DEE362849B796000268C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF1DEE392849B796000268C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF97BE3028579C8F00D1B37E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		EF97BE36285808EA00D1B37E /* UsersAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAPI.swift; sourceTree = "<group>"; };
-		EF97BE3928580E2100D1B37E /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
 		EF97BE3D285811A400D1B37E /* EnCodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnCodable+.swift"; sourceTree = "<group>"; };
-		EF97BE402858151B00D1B37E /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
-		EF97BE422858157300D1B37E /* NetworkLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogging.swift; sourceTree = "<group>"; };
-		EF97BE462858194300D1B37E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		EF97BE5128585ECB00D1B37E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		EF97BE532858646500D1B37E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EF97BE552858647400D1B37E /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
@@ -151,9 +143,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC694A5228BC414900E69C4E /* FirebaseFirestoreSwift in Frameworks */,
 				106598C52856DD7200F44728 /* ConfettiSwiftUI in Frameworks */,
+				BC694A5028BC414900E69C4E /* FirebaseFirestore in Frameworks */,
 				106598C22856DD2C00F44728 /* PartialSheet in Frameworks */,
-				EF97BE3428579D1300D1B37E /* Moya in Frameworks */,
+				BC694A5428BC414900E69C4E /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,14 +161,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		042B0CDD285828DF0091D9A5 /* Logs */ = {
-			isa = PBXGroup;
-			children = (
-				042B0CDE285828E80091D9A5 /* SwiftUIView.swift */,
-			);
-			path = Logs;
-			sourceTree = "<group>";
-		};
 		107A58CF284F98A0003D6F2B /* Registers */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +256,7 @@
 		EF1DEE312849B795000268C7 /* GilCat */ = {
 			isa = PBXGroup;
 			children = (
+				BC694A4C28BC3F8400E69C4E /* GoogleService-Info.plist */,
 				10FA629A2857884B00DEAD4A /* Info.plist */,
 				EF1DEE322849B795000268C7 /* GilCatApp.swift */,
 				EFA7B9322849EAB7006671EF /* Sources */,
@@ -295,44 +282,6 @@
 				EF97BE552858647400D1B37E /* HomeViewController.storyboard */,
 			);
 			path = "Supporting Views";
-			sourceTree = "<group>";
-		};
-		EF97BE2F28579C7800D1B37E /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				042B0CDD285828DF0091D9A5 /* Logs */,
-				EF97BE3F285812A400D1B37E /* Users */,
-				EF97BE3828580E1400D1B37E /* Auth */,
-				EF97BE35285808AB00D1B37E /* Base */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		EF97BE35285808AB00D1B37E /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				EF97BE3028579C8F00D1B37E /* API.swift */,
-				EF97BE402858151B00D1B37E /* NetworkProvider.swift */,
-				EF97BE422858157300D1B37E /* NetworkLogging.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		EF97BE3828580E1400D1B37E /* Auth */ = {
-			isa = PBXGroup;
-			children = (
-				EF97BE3928580E2100D1B37E /* AuthAPI.swift */,
-				EF97BE462858194300D1B37E /* AuthService.swift */,
-			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		EF97BE3F285812A400D1B37E /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				EF97BE36285808EA00D1B37E /* UsersAPI.swift */,
-			);
-			path = Users;
 			sourceTree = "<group>";
 		};
 		EF97BE4D285832ED00D1B37E /* Model */ = {
@@ -409,7 +358,6 @@
 		EFA7B9322849EAB7006671EF /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				EF97BE2F28579C7800D1B37E /* Network */,
 				EFA7B92E2849EA8B006671EF /* Global */,
 				EF97BE4D285832ED00D1B37E /* Model */,
 				EFA7B92D2849EA09006671EF /* Screen */,
@@ -421,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				BC5179F82852CC7100992BC5 /* GilCatImages.swift */,
+				BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -463,7 +412,9 @@
 			packageProductDependencies = (
 				106598C12856DD2C00F44728 /* PartialSheet */,
 				106598C42856DD7200F44728 /* ConfettiSwiftUI */,
-				EF97BE3328579D1300D1B37E /* Moya */,
+				BC694A4F28BC414900E69C4E /* FirebaseFirestore */,
+				BC694A5128BC414900E69C4E /* FirebaseFirestoreSwift */,
+				BC694A5328BC414900E69C4E /* FirebaseStorage */,
 			);
 			productName = GilCat;
 			productReference = EF1DEE2F2849B795000268C7 /* GilCat.app */;
@@ -518,7 +469,7 @@
 			packageReferences = (
 				BC517A042852E84D00992BC5 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
 				58790F6628558F3C00B20552 /* XCRemoteSwiftPackageReference "PartialSheet" */,
-				EF97BE3228579D1300D1B37E /* XCRemoteSwiftPackageReference "Moya" */,
+				BC694A4E28BC414900E69C4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = EF1DEE302849B795000268C7 /* Products */;
 			projectDirPath = "";
@@ -540,6 +491,7 @@
 				58B21B102856ED3D00205AE5 /* Colors.xcassets in Resources */,
 				10FA62992856E8BC00DEAD4A /* Assets.xcassets in Resources */,
 				EF1DEE3A2849B796000268C7 /* Preview Assets.xcassets in Resources */,
+				BC694A4D28BC3F8400E69C4E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,13 +531,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				107A58D9284FA08B003D6F2B /* RegisterAge.swift in Sources */,
-				042B0CDF285828E80091D9A5 /* SwiftUIView.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
 				04F0774828518C7E00339172 /* CodeView.swift in Sources */,
+				BC694A5628BC4C8100E69C4E /* FirebaseTool.swift in Sources */,
 				BC5179FD2852CE0500992BC5 /* GilCatDescription.swift in Sources */,
 				EF97BE542858646500D1B37E /* HomeViewController.swift in Sources */,
 				BC5179F92852CC7100992BC5 /* GilCatImages.swift in Sources */,
-				EF97BE472858194300D1B37E /* AuthService.swift in Sources */,
 				58B21B132856FFF900205AE5 /* CatSelectPopUpView.swift in Sources */,
 				107A58DF284FA0A3003D6F2B /* RegisterAvatar.swift in Sources */,
 				107A58D3284FA041003D6F2B /* RegisterCode.swift in Sources */,
@@ -594,14 +545,12 @@
 				BC5179FF2852CE2500992BC5 /* GilCatMainButton.swift in Sources */,
 				5800E59C2851908D002F6A75 /* PlaceholderTextField.swift in Sources */,
 				58A2002B28520B5500C656DF /* Login.swift in Sources */,
-				EF97BE3A28580E2100D1B37E /* AuthAPI.swift in Sources */,
 				10F486262855F290005A7ED6 /* VisibleExtension.swift in Sources */,
 				58B21B1528570C4000205AE5 /* GilCatTimePicker.swift in Sources */,
 				BCC605D32859AF78004FD48F /* NoteTagEdit.swift in Sources */,
 				EFA7B9362849EB22006671EF /* ComponentsTestView.swift in Sources */,
 				EF97BE5228585ECB00D1B37E /* Home.swift in Sources */,
 				BCC605D52859C466004FD48F /* NoteMemoWrite.swift in Sources */,
-				EF97BE432858157300D1B37E /* NetworkLogging.swift in Sources */,
 				107A58D1284F98BE003D6F2B /* RegisterStart.swift in Sources */,
 				107A58E3284FA4E5003D6F2B /* ColorExtension.swift in Sources */,
 				58E7FF872858FD870070D58B /* ScrollSnap.swift in Sources */,
@@ -613,12 +562,10 @@
 				04DE0D4C285AC31B00B10126 /* MergeCat.swift in Sources */,
 				58790F7028558FEE00B20552 /* NoteWater.swift in Sources */,
 				58A2002D28520B6F00C656DF /* Note.swift in Sources */,
-				EF97BE412858151B00D1B37E /* NetworkProvider.swift in Sources */,
 				EF97BE58285865FA00D1B37E /* HomeContainer.swift in Sources */,
 				58B21B1728570C7800205AE5 /* NoteFoodEdit.swift in Sources */,
 				58790F6C28558FD800B20552 /* NoteProfile.swift in Sources */,
 				5800E59E285191F3002F6A75 /* BarColorNavigation.swift in Sources */,
-				EF97BE37285808EA00D1B37E /* UsersAPI.swift in Sources */,
 				EF97BE6628589CF200D1B37E /* GilCatMapCount.swift in Sources */,
 				EFA7B9382849EB5C006671EF /* TestExtension.swift in Sources */,
 				58B21B192857189800205AE5 /* PickerSizeExtension.swift in Sources */,
@@ -628,7 +575,6 @@
 				EF97BE5B28587B0600D1B37E /* HomeViewModel.swift in Sources */,
 				BC517A032852DAEE00992BC5 /* RegisterFinish.swift in Sources */,
 				107A58D5284FA055003D6F2B /* RegisterName.swift in Sources */,
-				EF97BE3128579C8F00D1B37E /* API.swift in Sources */,
 				107A58D7284FA05E003D6F2B /* RegisterGender.swift in Sources */,
 				580A82A728598EF70045F26E /* NoteModel.swift in Sources */,
 			);
@@ -914,12 +860,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		EF97BE3228579D1300D1B37E /* XCRemoteSwiftPackageReference "Moya" */ = {
+		BC694A4E28BC414900E69C4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -935,10 +881,20 @@
 			package = BC517A042852E84D00992BC5 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
 			productName = ConfettiSwiftUI;
 		};
-		EF97BE3328579D1300D1B37E /* Moya */ = {
+		BC694A4F28BC414900E69C4E /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF97BE3228579D1300D1B37E /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
+			package = BC694A4E28BC414900E69C4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		BC694A5128BC414900E69C4E /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC694A4E28BC414900E69C4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		BC694A5328BC414900E69C4E /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC694A4E28BC414900E69C4E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
