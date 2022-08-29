@@ -18,6 +18,10 @@ class HomeViewModel: ObservableObject {
     
     func catImageButtonTapped(_ index: Int) {
         selectedIdx = index
+        print("snackCount!!")
+        for cat in catLists {
+            print(cat.snackCount)
+        }
         withAnimation {
             isCatPopup = true
         }

@@ -77,14 +77,20 @@ class HomeViewController: UIViewController {
     
     private func initializeCats() {
         guard let viewModel = viewModel else { return }
-        FirebaseTool.instance.getCat { cats, error in
+        FirebaseTool.instance.getCat { index, cat, error in
             if let error = error {
                 print("고양이 받아오기 에러: \(error)")
             } else {
                 print("고양이 받아오기 성공")
+                if index == -1 {
+                    print("add receive")
+                    viewModel.catLists.append(cat)
+                    self.updateList()
+                } else {
+                    print("modify receive")
+                    viewModel.catLists[index] = cat
+                }
             }
-            viewModel.catLists = cats
-            self.updateList()
         }
     }
     
