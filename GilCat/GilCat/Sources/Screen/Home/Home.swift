@@ -19,13 +19,10 @@ struct Home: View {
                         RegisterStart(popToRoot: $viewModel.isNewCatRegisterPopup)
                             .environmentObject(viewModel.newCatRegisterViewModel)
                     }
-                    .onAppear {
-                        
-                    }
                 
                 if $viewModel.isCatPopup.wrappedValue {
                     CatSelectPopup(isPopup: $viewModel.isCatPopup,
-                                   cat: $viewModel.selectedCat)
+                                   catList: $viewModel.catLists, catIdx: $viewModel.selectedIdx)
                 }
             }
         

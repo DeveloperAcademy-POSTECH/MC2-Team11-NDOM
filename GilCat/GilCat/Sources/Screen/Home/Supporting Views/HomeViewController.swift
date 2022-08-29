@@ -84,30 +84,7 @@ class HomeViewController: UIViewController {
                 print("고양이 받아오기 성공")
             }
             viewModel.catLists = cats
-            viewModel.catLists.enumerated().forEach {
-                var curCat = $0.element
-                switch $0.offset {
-                case 0:
-                    curCat.gilCatMapInformation = .first
-                case 1:
-                    curCat.gilCatMapInformation = .second
-                case 2:
-                    curCat.gilCatMapInformation = .third
-                case 3:
-                    curCat.gilCatMapInformation = .fourth
-                case 4:
-                    curCat.gilCatMapInformation = .fifth
-                case 5:
-                    curCat.gilCatMapInformation = .sixth
-                case 6:
-                    curCat.gilCatMapInformation = .seventh
-                case 7:
-                    curCat.gilCatMapInformation = .eighth
-                default:
-                    break
-                }
-                self.locateCatToScreen(curCat, $0.offset)
-            }
+            self.updateList()
         }
     }
     

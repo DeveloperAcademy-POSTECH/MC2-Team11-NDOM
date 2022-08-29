@@ -29,7 +29,8 @@ struct CatSelectPopup: View {
     @State var openCode: Bool = false
 
     @Binding var isPopup: Bool
-    @Binding var cat: GilCatInfo
+    @Binding var catList: [GilCatInfo]
+    @Binding var catIdx: Int
     
     @StateObject var selectedCat: InfoToNote = InfoToNote()
     
@@ -45,8 +46,8 @@ struct CatSelectPopup: View {
             ZStack {
                 VStack {
                     HStack(alignment: .center, spacing: 26) {
-                        getCatImage(Image: cat.imageName)
-                        Text(cat.name)
+                        getCatImage(Image: catList[catIdx].imageName)
+                        Text(catList[catIdx].name)
                             .frame(width: 115, height: 40, alignment: .center)
                             .padding(.top, 10)
                             .foregroundColor(Color.white)
@@ -86,6 +87,27 @@ struct CatSelectPopup: View {
                         .fullScreenCover(isPresented: $openNote) {
                             Note().environmentObject(selectedCat)
                         }
+                        .onChange(of: openNote) { _ in
+                            if openNote {
+                                selectedCat.name = catList[catIdx].name
+                                selectedCat.age = catList[catIdx].age
+                                selectedCat.gender = catList[catIdx].gender
+                                selectedCat.neutralized = catList[catIdx].neutralized
+                                selectedCat.type = catList[catIdx].type
+                                selectedCat.imageName = catList[catIdx].imageName
+                                selectedCat.dietInfo = catList[catIdx].dietInfo
+                                selectedCat.waterInfo = catList[catIdx].waterInfo
+                                selectedCat.snackCount = catList[catIdx].snackCount
+                                selectedCat.healthTagInfo = catList[catIdx].healthTagInfo
+                                selectedCat.memoInfo = catList[catIdx].memoInfo
+                            } else {
+                                catList[catIdx].dietInfo = selectedCat.dietInfo
+                                catList[catIdx].waterInfo = selectedCat.waterInfo
+                                catList[catIdx].snackCount = selectedCat.snackCount
+                                catList[catIdx].healthTagInfo = selectedCat.healthTagInfo
+                                catList[catIdx].memoInfo = selectedCat.memoInfo
+                            }
+                        }
                         
                         HStack(alignment: .center, spacing: 16) {
                             Button {
@@ -123,9 +145,9 @@ struct CatSelectPopup: View {
         }
     }
 }
-
-struct CatSelectPopup_Previews: PreviewProvider {
-    static var previews: some View {
-        CatSelectPopup(isPopup: .constant(true), cat: .constant(GilCatInfo.empty))
-    }
-}
+//
+//struct CatSelectPopup_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CatSelectPopup(isPopup: .constant(true), cat: .constant(GilCatInfo.empty))
+//    }
+//}

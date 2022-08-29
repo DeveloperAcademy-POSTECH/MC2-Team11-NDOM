@@ -23,7 +23,7 @@ struct GilCatInfo: Codable {
     var dietInfo: DietInfo          = .initCat
     var waterInfo: WaterInfo        = .initCat
     var snackCount: Int             = 0
-    var healthTagInfo: [String]     = []
+    var healthTagInfo: [HealthTag]  = []
     var memoInfo: [MemoInfo]        = []
     var gilCatMapInformation: GilCatMapCase = .none
     
