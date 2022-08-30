@@ -55,7 +55,7 @@ struct NoteFoodEdit: View {
         TextField("", text: $catInfo.dietInfo.name)
             .focused($focusField, equals: .field)
             .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                     self.focusField = .field }
             }
             .onChange(of: catInfo.dietInfo.name) { _ in

@@ -64,7 +64,7 @@ struct RegisterCode: View {
             }
             .onAppear {
 //                 화면이 나타나고 0.5초 뒤에 자동으로 공유코드 첫번째 입력칸에 포커스 되도록 하기
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                     isFocused = true
                 }
             }
@@ -100,7 +100,7 @@ struct RegisterCode: View {
                     if newCat.code.count > 6 {
                         newCat.code = String(newCat.code.prefix(6))
                     }
-                    if newCat.code.count == 6{
+                    if newCat.code.count == 6 {
                         
                     }
                 }
