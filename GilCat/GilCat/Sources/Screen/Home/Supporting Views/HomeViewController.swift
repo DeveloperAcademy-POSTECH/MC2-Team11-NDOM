@@ -83,7 +83,9 @@ class HomeViewController: UIViewController {
             } else {
                 print("고양이 받아오기 성공")
                 if index == -1 {
-                    viewModel.catLists.append(cat)
+                    if cat.userId == CodeTool.instance.getUserId() || CodeTool.instance.getCatCodes().contains(cat.catCode) {
+                        viewModel.catLists.append(cat)
+                    }
                     self.updateList()
                 } else {
                     viewModel.catLists[index] = cat

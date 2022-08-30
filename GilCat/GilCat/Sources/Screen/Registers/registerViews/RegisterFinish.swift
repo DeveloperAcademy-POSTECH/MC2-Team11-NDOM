@@ -95,6 +95,7 @@ struct RegisterFinish: View {
             var newModel = newCat.makeGilCatInfoModel()
             let catCount = HomeViewModel.instance.catLists.count
             newModel.index = catCount
+            newModel.catCode = CodeTool.instance.makeRandomCode()
             FirebaseTool.instance.addCat(newCat: newModel) { error in
                 if let error = error {
                     print("새로운 고양이 업로드 에러: \(error)")

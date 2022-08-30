@@ -47,6 +47,7 @@
 		BC694A5228BC414900E69C4E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BC694A5128BC414900E69C4E /* FirebaseFirestoreSwift */; };
 		BC694A5428BC414900E69C4E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BC694A5328BC414900E69C4E /* FirebaseStorage */; };
 		BC694A5628BC4C8100E69C4E /* FirebaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */; };
+		BC694A5828BDB4C400E69C4E /* CodeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC694A5728BDB4C400E69C4E /* CodeTool.swift */; };
 		BCC605CD2858C6A9004FD48F /* NewCatRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605CC2858C6A9004FD48F /* NewCatRegisterViewModel.swift */; };
 		BCC605D32859AF78004FD48F /* NoteTagEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605D22859AF78004FD48F /* NoteTagEdit.swift */; };
 		BCC605D52859C466004FD48F /* NoteMemoWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC605D42859C466004FD48F /* NoteMemoWrite.swift */; };
@@ -114,6 +115,7 @@
 		BC517A092853769D00992BC5 /* GilCatInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GilCatInfo.swift; sourceTree = "<group>"; };
 		BC694A4C28BC3F8400E69C4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTool.swift; sourceTree = "<group>"; };
+		BC694A5728BDB4C400E69C4E /* CodeTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTool.swift; sourceTree = "<group>"; };
 		BCC605CC2858C6A9004FD48F /* NewCatRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCatRegisterViewModel.swift; sourceTree = "<group>"; };
 		BCC605D22859AF78004FD48F /* NoteTagEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTagEdit.swift; sourceTree = "<group>"; };
 		BCC605D42859C466004FD48F /* NoteMemoWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMemoWrite.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				BC5179F82852CC7100992BC5 /* GilCatImages.swift */,
 				BC694A5528BC4C8100E69C4E /* FirebaseTool.swift */,
+				BC694A5728BDB4C400E69C4E /* CodeTool.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			files = (
 				107A58D9284FA08B003D6F2B /* RegisterAge.swift in Sources */,
 				EF1DEE332849B795000268C7 /* GilCatApp.swift in Sources */,
+				BC694A5828BDB4C400E69C4E /* CodeTool.swift in Sources */,
 				04F0774828518C7E00339172 /* CodeView.swift in Sources */,
 				BC694A5628BC4C8100E69C4E /* FirebaseTool.swift in Sources */,
 				BC5179FD2852CE0500992BC5 /* GilCatDescription.swift in Sources */,

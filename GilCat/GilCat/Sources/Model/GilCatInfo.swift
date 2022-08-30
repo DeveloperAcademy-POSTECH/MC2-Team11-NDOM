@@ -10,15 +10,17 @@ import Foundation
 
 // MARK: 한 마리 고양이 정보 객체
 struct GilCatInfo: Codable {
-    var index: Int                  = 0             // 인덱스
-    var name: String                = ""            // 이름
-    var age: String                 = ""            // 나이
-    var gender: GilCatGender        = .male         // 성별
-    var neutralized: Bool           = true          // 중성화 여부
-    var type: String                = ""            // 종
-    var avatarColor: GilCatColor    = .gray         // 아바타 색깔
-    var avatarBodyIndex: Int        = 0             // 아바타 몸
-    var imageName: String {                         // 아바타 이미지
+    var userId: String              = CodeTool.instance.getUserId()   // 유저 아이디 (만든 사람)
+    var catCode: String             = ""                                // 합치기 할때 쓸 코드
+    var index: Int                  = 0                                 // 인덱스
+    var name: String                = ""                                // 이름
+    var age: String                 = ""                                // 나이
+    var gender: GilCatGender        = .male                             // 성별
+    var neutralized: Bool           = true                              // 중성화 여부
+    var type: String                = ""                                // 종
+    var avatarColor: GilCatColor    = .gray                             // 아바타 색깔
+    var avatarBodyIndex: Int        = 0                                 // 아바타 몸
+    var imageName: String {                                             // 아바타 이미지
         return avatarColor.group[avatarBodyIndex]
     }
     var dietInfo: DietInfo          = .initCat
@@ -29,6 +31,8 @@ struct GilCatInfo: Codable {
     var gilCatMapInformation: GilCatMapCase = .none
     
     enum CodingKeys: String, CodingKey {
+        case userId
+        case catCode
         case index
         case name
         case age
@@ -48,7 +52,9 @@ struct GilCatInfo: Codable {
 }
 
 extension GilCatInfo {
-    static let empty = GilCatInfo(index: 0,
+    static let empty = GilCatInfo(userId: "",
+                                  catCode: "",
+                                  index: 0,
                                   name: "",
                                   age: "",
                                   gender: .male,
