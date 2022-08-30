@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: 한 마리 고양이 정보 객체
 struct GilCatInfo: Codable {
-    var userId: String              = CodeTool.instance.getUserId()   // 유저 아이디 (만든 사람)
+    var userId: [String]            = []                                // 공유하는 사람들
     var catCode: String             = ""                                // 합치기 할때 쓸 코드
     var index: Int                  = 0                                 // 인덱스
     var name: String                = ""                                // 이름
@@ -52,7 +52,7 @@ struct GilCatInfo: Codable {
 }
 
 extension GilCatInfo {
-    static let empty = GilCatInfo(userId: "",
+    static let empty = GilCatInfo(userId: [],
                                   catCode: "",
                                   index: 0,
                                   name: "",

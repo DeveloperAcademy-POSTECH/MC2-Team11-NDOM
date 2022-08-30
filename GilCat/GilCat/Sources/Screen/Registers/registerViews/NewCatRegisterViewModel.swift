@@ -35,6 +35,9 @@ class NewCatRegisterViewModel: ObservableObject {
     
     func makeGilCatInfoModel() -> GilCatInfo {
         var gilCatInfo = GilCatInfo()
+        gilCatInfo.index = HomeViewModel.instance.catLists.count
+        gilCatInfo.catCode = CodeTool.instance.makeRandomCode()
+        gilCatInfo.userId.append(CodeTool.instance.getUserId())
         gilCatInfo.name = name
         gilCatInfo.age = age
         gilCatInfo.gender = gender

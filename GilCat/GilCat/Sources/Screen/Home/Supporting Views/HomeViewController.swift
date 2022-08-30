@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     var viewModel: HomeViewModel?
+    var imageViewList = [UIImageView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,10 @@ class HomeViewController: UIViewController {
     
     func updateList() {
         guard let viewModel = viewModel else { return }
+        for imgview in imageViewList {
+            imgview.removeFromSuperview()
+        }
+        imageViewList = []
         viewModel.catLists.enumerated().forEach {
             var curCat = $0.element
             switch $0.offset {
@@ -77,19 +82,24 @@ class HomeViewController: UIViewController {
     
     private func initializeCats() {
         guard let viewModel = viewModel else { return }
-        FirebaseTool.instance.getCat { index, cat, error in
+        FirebaseTool.instance.addListener { index, cat, error in
             if let error = error {
                 print("고양이 받아오기 에러: \(error)")
             } else {
                 print("고양이 받아오기 성공")
                 if index == -1 {
-                    if cat.userId == CodeTool.instance.getUserId() || CodeTool.instance.getCatCodes().contains(cat.catCode) {
+                    if cat.userId.contains(CodeTool.instance.getUserId()) {
                         viewModel.catLists.append(cat)
                     }
-                    self.updateList()
                 } else {
-                    viewModel.catLists[index] = cat
+                    if index == viewModel.catLists[index].index {
+                        viewModel.catLists[index] = cat
+                    } else {
+                        viewModel.catLists.append(cat)
+                        viewModel.catLists.sort {$0.index < $1.index}
+                    }
                 }
+                self.updateList()
             }
         }
     }
@@ -100,6 +110,7 @@ class HomeViewController: UIViewController {
         
         let catImage = UIImage(named: catInfo.imageName)
         let catImageView = UIImageView(image: catImage)
+        imageViewList.append(catImageView)
         contentView.addSubview(catImageView)
         
         catImageView.tag = index

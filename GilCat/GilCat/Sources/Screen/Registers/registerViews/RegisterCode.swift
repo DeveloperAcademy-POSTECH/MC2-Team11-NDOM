@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RegisterCode: View {
+    enum Mode {
+        case get, merge
+    }
+    
     @EnvironmentObject var newCat: NewCatRegisterViewModel
     @Environment(\.presentationMode) private var presentation
     @FocusState private var isFocused: Bool?
@@ -15,10 +19,13 @@ struct RegisterCode: View {
     @State private var isLinkActive = false
     @State private var isAlertActice = false
     @State private var isShareCheck = false
+    @State private var isMergeFail = false
+    let mode: Mode
     
-    init(popToRoot: Binding<Bool>) {
+    init(popToRoot: Binding<Bool>, mode: Mode) {
         UITextView.appearance().backgroundColor = .clear
         self._isActiveForPopToRoot = popToRoot
+        self.mode = mode
     }
     
     var body: some View {
@@ -29,7 +36,11 @@ struct RegisterCode: View {
                 getTitleView("공유 코드")
                 getTotalCodeInputView()
                 Spacer()
-                getMainButtomView()
+                if mode == .get {
+                    getMainButtomViewToGet()
+                } else {
+                    getMainButtomViewToMerge()
+                }
             }
             .navigationTitle("공유코드")
             .navigationBarTitleDisplayMode(.inline)
@@ -48,19 +59,51 @@ struct RegisterCode: View {
                 }
             }
             .background(Color.backgroundColor)
-            .alert("코드를 모두 입력하거나 건너뛰기를 눌러주세요", isPresented: $isAlertActice) {
-                Button("확인") {}
+            .alert(mode == .get ? "코드를 모두 입력하거나 건너뛰기를 눌러주세요" : "코드를 모두 입력해주세요", isPresented: $isAlertActice) {
+                Button("확인") { }
+            }
+            .alert("고양이 정보를 불러오기에 실패했습니다", isPresented: $isMergeFail) {
+                Button("확인") { }
             }
             .alert(isPresented: $isShareCheck) {
-                let alertFirstButton = Alert.Button.destructive(Text("취소")) { }
-                
-                let alertSecondButton = Alert.Button.default(Text("합치기")) {
-                    isLinkActive = true
+                if mode == .get {
+                    let alertFirstButton = Alert.Button.destructive(Text("취소")) { }
+                    let alertSecondButton = Alert.Button.default(Text("불러오기")) {
+                        FirebaseTool.instance.getCat { cats, error in
+                            var index = -1
+                            var gettingCat = GilCatInfo()
+                            for (idx, cat) in cats.enumerated() where cat.catCode == newCat.code {
+                                index = idx
+                                gettingCat = cat
+                                break
+                            }
+                            
+                            gettingCat.userId.append(CodeTool.instance.getUserId())
+                            print(gettingCat.userId)
+                            if index != -1 {
+                                FirebaseTool.instance.updateCat(updatingCat: gettingCat) { error in
+                                    if let error = error {
+                                        print("고양이 불러오기 에러: \(error)")
+                                    } else {
+                                        print("고양이 불러오기 성공")
+                                    }
+                                }
+                                isActiveForPopToRoot = false
+                            } else {
+                                isMergeFail = true
+                            }
+                        }
+                    }
+                    return Alert(title: Text("해당 길고양이 기록장을 불러옵니다."),
+                                 primaryButton: alertFirstButton, secondaryButton: alertSecondButton)
+                } else {
+                    let alertFirstButton = Alert.Button.destructive(Text("취소")) { }
+                    let alertSecondButton = Alert.Button.default(Text("합치기")) {
+                        
+                    }
+                    return Alert(title: Text("현재 기록장과 해당 길고양이 기록장을 합칩니다."),
+                                 primaryButton: alertFirstButton, secondaryButton: alertSecondButton)
                 }
-                
-                return Alert(title: Text("주의!"),
-                             message: Text("길고양이 기록장이 합쳐집니다."),
-                             primaryButton: alertFirstButton, secondaryButton: alertSecondButton)
             }
             .onAppear {
 //                 화면이 나타나고 0.5초 뒤에 자동으로 공유코드 첫번째 입력칸에 포커스 되도록 하기
@@ -115,9 +158,9 @@ struct RegisterCode: View {
         }
         .padding()
     }
-    // 메인 버튼 뷰 반환하기
+    // 메인 버튼 뷰 반환하기 (가져오기)
     @ViewBuilder
-    private func getMainButtomView() -> some View {
+    private func getMainButtomViewToGet() -> some View {
         HStack {
             NavigationLink(destination: RegisterName(popToRoot: $isActiveForPopToRoot), isActive: $isLinkActive) {
                 Button {
@@ -127,23 +170,45 @@ struct RegisterCode: View {
                 }
             }
             .isDetailLink(false)
-            NavigationLink(destination: RegisterName(popToRoot: $isActiveForPopToRoot), isActive: $isLinkActive) {
-                Button {
-                    // TODO: 코드에 따라 서버에서 다른 고양이 룸 정보 받아오기
-                    // 코드가 다 입력이 안됐다면, 팝업 창 보여주기
-                    if newCat.code.count != 6 {
-                        isAlertActice = true
-                    } else {
-                        isShareCheck = true
-                    }
-                } label: {
-                    GilCatMainButton(text: "다음", foreground: .white, background: .constant(.buttonColor))
+            Button {
+                // TODO: 코드에 따라 서버에서 다른 고양이 룸 정보 받아오기
+                // 코드가 다 입력이 안됐다면, 팝업 창 보여주기
+                if newCat.code.count != 6 {
+                    isAlertActice = true
+                } else {
+                    isShareCheck = true
                 }
+            } label: {
+                GilCatMainButton(text: "다음", foreground: .white, background: .constant(.buttonColor))
             }
-            .isDetailLink(false)
         }
         .padding()
     }
+    
+    // 메인 버튼 뷰 반환하기 (합치기)
+    @ViewBuilder
+    private func getMainButtomViewToMerge() -> some View {
+        HStack {
+            Button {
+                self.presentation.wrappedValue.dismiss()
+            } label: {
+                GilCatMainButton(text: "닫기", foreground: .white, background: .constant(.pickerColor))
+            }
+            Button {
+                // TODO: 코드에 따라 서버에서 다른 고양이 룸 정보 받아오기
+                // 코드가 다 입력이 안됐다면, 팝업 창 보여주기
+                if newCat.code.count != 6 {
+                    isAlertActice = true
+                } else {
+                    isShareCheck = true
+                }
+            } label: {
+                GilCatMainButton(text: "합치기", foreground: .white, background: .constant(.buttonColor))
+            }
+        }
+        .padding()
+    }
+
     // 캐릭터 반환하기
     private func getChar(_ index: Int) -> String {
         var codes = ["", "", "", "", "", ""]
@@ -159,6 +224,6 @@ struct RegisterCode: View {
 
 struct RegisterCode_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterCode(popToRoot: .constant(false)).environmentObject(NewCatRegisterViewModel())
+        RegisterCode(popToRoot: .constant(false), mode: .get).environmentObject(NewCatRegisterViewModel())
     }
 }

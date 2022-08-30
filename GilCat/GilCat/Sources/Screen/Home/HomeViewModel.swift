@@ -18,9 +18,7 @@ class HomeViewModel: ObservableObject {
     
     func catImageButtonTapped(_ index: Int) {
         selectedIdx = index
-        withAnimation {
-            isCatPopup = true
-        }
+        isCatPopup = true
     }
     
     func boxImageButtonTapped() {

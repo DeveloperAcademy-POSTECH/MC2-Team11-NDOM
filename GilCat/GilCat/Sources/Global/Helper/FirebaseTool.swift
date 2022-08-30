@@ -22,8 +22,32 @@ class FirebaseTool {
         }
     }
     
-    // 파이어베이스에서 고양이 객체들 가져오기
-    func getCat(completion: @escaping ((Int, GilCatInfo, Error?) -> Void)) {
+    func getCat(completion: @escaping (([GilCatInfo], Error?) -> Void)) {
+        let storageRef = storagePath.collection("GilCatInfo")
+        storageRef.getDocuments { (snapshot, error) in
+            guard let documents = snapshot?.documents else {
+                completion([], error)
+                return
+            }
+            var dataArr = [GilCatInfo]()
+            for document in documents {
+                do {
+                    let cat = try document.data(as: GilCatInfo.self)
+                    dataArr.append(cat)
+//                    let jsonData = try JSONSerialization.data(withJSONObject: document.data())
+//                    let decodedData = try JSONDecoder().decode(GilCatInfo.self, from: jsonData)
+//                    dataArr.append(decodedData)
+                } catch {
+                    completion([], error)
+                    return
+                }
+            }
+            completion(dataArr, nil)
+        }
+    }
+    
+    // 파이어베이스에서 고양이 객체들에 리스너 달기
+    func addListener(completion: @escaping ((Int, GilCatInfo, Error?) -> Void)) {
         removeListener()
         let storageRef = storagePath.collection("GilCatInfo")
 

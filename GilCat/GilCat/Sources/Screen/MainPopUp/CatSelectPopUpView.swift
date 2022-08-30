@@ -24,7 +24,6 @@ struct CatSelectPopup: View {
     static let cardHeight: CGFloat = 303
     
     @State var isInviting = false
-    @State var inviteCode = "123456"
     @State var openNote: Bool = false
     @State var openCode: Bool = false
 
@@ -110,7 +109,10 @@ struct CatSelectPopup: View {
                                 Color.mainBlack
                                     .frame(width: 130, height: 60, alignment: .center)
                                     .cornerRadius(20)
-                                    .overlay(isInviting ? Text(inviteCode).foregroundColor(.mainOrange) : Text("초대하기").foregroundColor(.white).font(.system(size: 20, weight: .heavy)))
+                                    .overlay(isInviting ? Text(catList[catIdx].catCode).foregroundColor(.mainOrange) : Text("초대하기").foregroundColor(.white).font(.system(size: 20, weight: .heavy)))
+                            }
+                            .onChange(of: catIdx) { _ in
+                                isInviting = false
                             }
                             Button {
 // MARK: 합치기 기능
@@ -121,10 +123,8 @@ struct CatSelectPopup: View {
                                     .cornerRadius(20)
                                     .overlay(Text("합치기").foregroundColor(.white).font(.system(size: 20, weight: .heavy)))
                             }
-                            .alert("준비중입니다", isPresented: $openCode) {
-                                Button("확인") {}
-//                            .fullScreenCover(isPresented: $openCode) {
-//                                MergeCat(openCode: $openCode)
+                            .fullScreenCover(isPresented: $openCode) {
+                                RegisterCode(popToRoot: $openCode, mode: .merge).environmentObject(NewCatRegisterViewModel())
                             }
                         }
                         

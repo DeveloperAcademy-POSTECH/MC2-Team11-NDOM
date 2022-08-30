@@ -8,6 +8,8 @@
 import SwiftUI
 
 class InfoToNote: ObservableObject {
+    @Published var userId: [String]            = []
+    @Published var catCode: String             = ""
     @Published var index: Int                  = 0             // 인덱스
     @Published var name: String                = "마시멜랑"      // 이름
     @Published var age: String                 = "안알랴쥼"      // 나이
@@ -28,6 +30,8 @@ class InfoToNote: ObservableObject {
     
     func makeGilCatInfoModel() -> GilCatInfo {
         var gilCatInfo = GilCatInfo()
+        gilCatInfo.userId = userId
+        gilCatInfo.catCode = catCode
         gilCatInfo.index = index
         gilCatInfo.name = name
         gilCatInfo.age = age
@@ -46,6 +50,8 @@ class InfoToNote: ObservableObject {
     }
     
     func getGilCatInfoModel(gilCat: GilCatInfo) {
+        userId = gilCat.userId
+        catCode = gilCat.catCode
         index = gilCat.index
         name = gilCat.name
         age = gilCat.age

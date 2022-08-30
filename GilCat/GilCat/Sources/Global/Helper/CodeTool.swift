@@ -17,12 +17,10 @@ class CodeTool {
     func getUserId() -> String {
         let value = UserDefaults.standard.string(forKey: "UserId")
         if let value = value {
-            print("이미 존재하는 아이디: \(value)")
             return value
         } else {
             let randomId = (0 ..< 10).map { _ in charList.randomElement()! }
             let result = String(randomId)
-            print("새로 만든 아이디: \(result)")
             UserDefaults.standard.set(result, forKey: "UserId")
             return result
         }
@@ -35,27 +33,27 @@ class CodeTool {
         return result
     }
     
-    // 고양이 코드들 가져오기
-    func getCatCodes() -> [String] {
-        let value = UserDefaults.standard.stringArray(forKey: "CatCodes")
-        if let value = value {
-            return value
-        } else {
-            return []
-        }
-    }
-    
-    // 특정 고양이 코드 내부에 저장
-    func saveCatCode(code: String) {
-        let value = UserDefaults.standard.stringArray(forKey: "CatCodes")
-        if let value = value {
-            print("이미 존재하는 고양이 코드 리스트: \(value)")
-            var originCodeList = value
-            originCodeList.append(code)
-            UserDefaults.standard.set(originCodeList, forKey: "CatCodes")
-        } else {
-            let newCodeList = [code]
-            UserDefaults.standard.set(newCodeList, forKey: "CatCodes")
-        }
-    }
+//    // 고양이 코드들 가져오기
+//    func getCatCodes() -> [String] {
+//        let value = UserDefaults.standard.stringArray(forKey: "CatCodes")
+//        if let value = value {
+//            return value
+//        } else {
+//            return []
+//        }
+//    }
+//
+//    // 특정 고양이 코드 내부에 저장
+//    func saveCatCode(code: String) {
+//        let value = UserDefaults.standard.stringArray(forKey: "CatCodes")
+//        if let value = value {
+//            print("이미 존재하는 고양이 코드 리스트: \(value)")
+//            var originCodeList = value
+//            originCodeList.append(code)
+//            UserDefaults.standard.set(originCodeList, forKey: "CatCodes")
+//        } else {
+//            let newCodeList = [code]
+//            UserDefaults.standard.set(newCodeList, forKey: "CatCodes")
+//        }
+//    }
 }
