@@ -43,8 +43,6 @@ class NewCatRegisterViewModel: ObservableObject {
         gilCatInfo.avatarColor = avatarColor
         gilCatInfo.avatarBodyIndex = avatarBodyIndex
         
-        
-        
         return gilCatInfo
     }
 }

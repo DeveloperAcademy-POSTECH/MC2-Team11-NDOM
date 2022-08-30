@@ -10,6 +10,7 @@ import Foundation
 
 // MARK: 한 마리 고양이 정보 객체
 struct GilCatInfo: Codable {
+    var index: Int                  = 0             // 인덱스
     var name: String                = ""            // 이름
     var age: String                 = ""            // 나이
     var gender: GilCatGender        = .male         // 성별
@@ -28,6 +29,7 @@ struct GilCatInfo: Codable {
     var gilCatMapInformation: GilCatMapCase = .none
     
     enum CodingKeys: String, CodingKey {
+        case index
         case name
         case age
         case gender
@@ -46,7 +48,8 @@ struct GilCatInfo: Codable {
 }
 
 extension GilCatInfo {
-    static let empty = GilCatInfo(name: "",
+    static let empty = GilCatInfo(index: 0,
+                                  name: "",
                                   age: "",
                                   gender: .male,
                                   neutralized: true,

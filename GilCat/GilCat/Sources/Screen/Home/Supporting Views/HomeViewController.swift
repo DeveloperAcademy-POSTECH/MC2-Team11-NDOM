@@ -83,11 +83,9 @@ class HomeViewController: UIViewController {
             } else {
                 print("고양이 받아오기 성공")
                 if index == -1 {
-                    print("add receive")
                     viewModel.catLists.append(cat)
                     self.updateList()
                 } else {
-                    print("modify receive")
                     viewModel.catLists[index] = cat
                 }
             }

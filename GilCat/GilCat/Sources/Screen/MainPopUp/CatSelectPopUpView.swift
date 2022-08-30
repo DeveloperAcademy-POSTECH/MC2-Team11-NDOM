@@ -89,23 +89,16 @@ struct CatSelectPopup: View {
                         }
                         .onChange(of: openNote) { _ in
                             if openNote {
-                                selectedCat.name = catList[catIdx].name
-                                selectedCat.age = catList[catIdx].age
-                                selectedCat.gender = catList[catIdx].gender
-                                selectedCat.neutralized = catList[catIdx].neutralized
-                                selectedCat.type = catList[catIdx].type
-                                selectedCat.imageName = catList[catIdx].imageName
-                                selectedCat.dietInfo = catList[catIdx].dietInfo
-                                selectedCat.waterInfo = catList[catIdx].waterInfo
-                                selectedCat.snackCount = catList[catIdx].snackCount
-                                selectedCat.healthTagInfo = catList[catIdx].healthTagInfo
-                                selectedCat.memoInfo = catList[catIdx].memoInfo
+                                selectedCat.getGilCatInfoModel(gilCat: catList[catIdx])
                             } else {
-                                catList[catIdx].dietInfo = selectedCat.dietInfo
-                                catList[catIdx].waterInfo = selectedCat.waterInfo
-                                catList[catIdx].snackCount = selectedCat.snackCount
-                                catList[catIdx].healthTagInfo = selectedCat.healthTagInfo
-                                catList[catIdx].memoInfo = selectedCat.memoInfo
+                                FirebaseTool.instance.updateCat(updatingCat: selectedCat.makeGilCatInfoModel()) { error in
+                                    if let error = error {
+                                        print("고양이 업데이트 에러: \(error)")
+                                    } else {
+                                        print("고양이 업데이트 성공")
+                                        catList[catIdx] = selectedCat.makeGilCatInfoModel()
+                                    }
+                                }
                             }
                         }
                         

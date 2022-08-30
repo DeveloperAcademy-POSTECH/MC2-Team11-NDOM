@@ -92,13 +92,14 @@ struct RegisterFinish: View {
     @ViewBuilder
     private func getMainButtomView() -> some View {
         Button {
-            let newModel = newCat.makeGilCatInfoModel()
-            FirebaseTool.instance.uploadCat(newCat: newModel) { error in
+            var newModel = newCat.makeGilCatInfoModel()
+            let catCount = HomeViewModel.instance.catLists.count
+            newModel.index = catCount
+            FirebaseTool.instance.addCat(newCat: newModel) { error in
                 if let error = error {
                     print("새로운 고양이 업로드 에러: \(error)")
                 } else {
                     print("새로운 고양이 업로드 성공")
-                    HomeViewModel.instance.catLists.append(newModel)
                 }
             }
             isActiveForPopToRoot = false
