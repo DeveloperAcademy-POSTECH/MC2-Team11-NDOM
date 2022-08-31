@@ -84,7 +84,7 @@ struct RegisterStart: View {
     // 메인 버튼 뷰 반환하기
     @ViewBuilder
     private func getMainButtomView() -> some View {
-        NavigationLink(destination: RegisterCode(popToRoot: $isActiveForPopToRoot, mode: .get), isActive: $isLinkActive) {
+        NavigationLink(destination: RegisterCode(popToRoot: $isActiveForPopToRoot, mode: .register), isActive: $isLinkActive) {
             Button {
                 isLinkActive = true
             } label: {

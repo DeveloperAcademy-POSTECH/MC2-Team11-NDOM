@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RegisterCode: View {
     enum Mode {
-        case get, merge
+        case register, merge
     }
     
     @EnvironmentObject var newCat: NewCatRegisterViewModel
@@ -20,6 +20,7 @@ struct RegisterCode: View {
     @State private var isAlertActice = false
     @State private var isShareCheck = false
     @State private var isMergeFail = false
+    @State private var originCatCode = ""
     let mode: Mode
     
     init(popToRoot: Binding<Bool>, mode: Mode) {
@@ -36,7 +37,7 @@ struct RegisterCode: View {
                 getTitleView("공유 코드")
                 getTotalCodeInputView()
                 Spacer()
-                if mode == .get {
+                if mode == .register {
                     getMainButtomViewToGet()
                 } else {
                     getMainButtomViewToMerge()
@@ -59,47 +60,24 @@ struct RegisterCode: View {
                 }
             }
             .background(Color.backgroundColor)
-            .alert(mode == .get ? "코드를 모두 입력하거나 건너뛰기를 눌러주세요" : "코드를 모두 입력해주세요", isPresented: $isAlertActice) {
+            .alert(mode == .register ? "코드를 모두 입력하거나 건너뛰기를 눌러주세요" : "코드를 모두 입력해주세요", isPresented: $isAlertActice) {
                 Button("확인") { }
             }
             .alert("고양이 정보를 불러오기에 실패했습니다", isPresented: $isMergeFail) {
                 Button("확인") { }
             }
             .alert(isPresented: $isShareCheck) {
-                if mode == .get {
+                if mode == .register {
                     let alertFirstButton = Alert.Button.destructive(Text("취소")) { }
                     let alertSecondButton = Alert.Button.default(Text("불러오기")) {
-                        FirebaseTool.instance.getCat { cats, error in
-                            var index = -1
-                            var gettingCat = GilCatInfo()
-                            for (idx, cat) in cats.enumerated() where cat.catCode == newCat.code {
-                                index = idx
-                                gettingCat = cat
-                                break
-                            }
-                            
-                            gettingCat.userId.append(CodeTool.instance.getUserId())
-                            print(gettingCat.userId)
-                            if index != -1 {
-                                FirebaseTool.instance.updateCat(updatingCat: gettingCat) { error in
-                                    if let error = error {
-                                        print("고양이 불러오기 에러: \(error)")
-                                    } else {
-                                        print("고양이 불러오기 성공")
-                                    }
-                                }
-                                isActiveForPopToRoot = false
-                            } else {
-                                isMergeFail = true
-                            }
-                        }
+                        getCatByRegister()
                     }
                     return Alert(title: Text("해당 길고양이 기록장을 불러옵니다."),
                                  primaryButton: alertFirstButton, secondaryButton: alertSecondButton)
                 } else {
                     let alertFirstButton = Alert.Button.destructive(Text("취소")) { }
                     let alertSecondButton = Alert.Button.default(Text("합치기")) {
-                        
+                        getCatByMerge()
                     }
                     return Alert(title: Text("현재 기록장과 해당 길고양이 기록장을 합칩니다."),
                                  primaryButton: alertFirstButton, secondaryButton: alertSecondButton)
@@ -109,6 +87,11 @@ struct RegisterCode: View {
 //                 화면이 나타나고 0.5초 뒤에 자동으로 공유코드 첫번째 입력칸에 포커스 되도록 하기
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                     isFocused = true
+                }
+                
+                if !newCat.code.isEmpty {
+                    originCatCode = newCat.code
+                    newCat.code = ""
                 }
             }
         }
@@ -220,10 +203,76 @@ struct RegisterCode: View {
         }
         return codes[index]
     }
+    
+    // 등록 뷰에서 넘어가는 화면에서 코드 입력하면 고양이 불러오는거
+    func getCatByRegister() {
+        FirebaseTool.instance.getCat { cats, error in
+            var index = -1
+            var gettingCat = GilCatInfo()
+            for (idx, cat) in cats.enumerated() where cat.catCode == newCat.code {
+                index = idx
+                gettingCat = cat
+                break
+            }
+            
+            gettingCat.userId.append(CodeTool.instance.getUserId())
+            print(gettingCat.userId)
+            if index != -1 {
+                FirebaseTool.instance.updateCat(updatingCat: gettingCat) { error in
+                    if let error = error {
+                        print("고양이 업데이트 에러: \(error)")
+                    }
+                }
+                isActiveForPopToRoot = false
+            } else {
+                isMergeFail = true
+            }
+        }
+    }
+    
+    // 메인화면의 고양이 팝업 합치기를 통해 코드 입력하면 고양이 불러오는거
+    func getCatByMerge() {
+        FirebaseTool.instance.getCat { cats, error in
+            if error == nil {
+                var originCatIndex = -1
+                var mergedCatIndex = -1
+                var originCat = GilCatInfo()
+                var mergedCat = GilCatInfo()
+                for (idx, cat) in cats.enumerated() {
+                    if cat.catCode == newCat.code {
+                        mergedCatIndex = idx
+                        mergedCat = cat
+                    } else if cat.catCode == originCatCode {
+                        originCatIndex = idx
+                        originCat = cat
+                    }
+                }
+                
+                if originCatIndex != -1 && mergedCatIndex != -1 {
+                    mergedCat = originCat.merge(other: mergedCat)
+                    
+                    FirebaseTool.instance.updateCat(updatingCat: mergedCat) { error in
+                        if let error = error {
+                            print("고양이 업데이트 에러: \(error)")
+                            isMergeFail = true
+                        } else {
+                            FirebaseTool.instance.removeCat(removingCatIndex: originCatIndex)
+                            presentation.wrappedValue.dismiss()
+                        }
+                    }
+                
+                } else {
+                    isMergeFail = true
+                }
+            } else {
+                isMergeFail = true
+            }
+        }
+    }
 }
 
 struct RegisterCode_Previews: PreviewProvider {
     static var previews: some View {
-        RegisterCode(popToRoot: .constant(false), mode: .get).environmentObject(NewCatRegisterViewModel())
+        RegisterCode(popToRoot: .constant(false), mode: .register).environmentObject(NewCatRegisterViewModel())
     }
 }

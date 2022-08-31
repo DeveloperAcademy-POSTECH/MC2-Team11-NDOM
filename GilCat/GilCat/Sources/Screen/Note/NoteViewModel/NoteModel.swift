@@ -23,6 +23,7 @@ class InfoToNote: ObservableObject {
     @Published var snackCount: Int             = 0             // 간식 개수
     @Published var healthTagInfo: [HealthTag]  = []            // 건강 태그
     @Published var memoInfo: [MemoInfo]        = []            // 메모 정보
+    @Published var removed: Bool               = false
     
     var imageName: String {                                    // 아바타 이미지
         return avatarColor.group[avatarBodyIndex]
@@ -45,6 +46,7 @@ class InfoToNote: ObservableObject {
         gilCatInfo.snackCount = snackCount
         gilCatInfo.healthTagInfo = healthTagInfo
         gilCatInfo.memoInfo = memoInfo
+        gilCatInfo.removed = removed
 
         return gilCatInfo
     }
@@ -65,5 +67,6 @@ class InfoToNote: ObservableObject {
         snackCount = gilCat.snackCount
         healthTagInfo = gilCat.healthTagInfo
         memoInfo = gilCat.memoInfo
+        removed = gilCat.removed
     }
 }

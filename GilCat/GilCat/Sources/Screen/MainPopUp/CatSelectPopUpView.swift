@@ -32,6 +32,7 @@ struct CatSelectPopup: View {
     @Binding var catIdx: Int
     
     @StateObject var selectedCat: InfoToNote = InfoToNote()
+    @StateObject var originCat: NewCatRegisterViewModel = NewCatRegisterViewModel()
     
     var body: some View {
         VStack {
@@ -94,7 +95,6 @@ struct CatSelectPopup: View {
                                     if let error = error {
                                         print("고양이 업데이트 에러: \(error)")
                                     } else {
-                                        print("고양이 업데이트 성공")
                                         catList[catIdx] = selectedCat.makeGilCatInfoModel()
                                     }
                                 }
@@ -124,7 +124,10 @@ struct CatSelectPopup: View {
                                     .overlay(Text("합치기").foregroundColor(.white).font(.system(size: 20, weight: .heavy)))
                             }
                             .fullScreenCover(isPresented: $openCode) {
-                                RegisterCode(popToRoot: $openCode, mode: .merge).environmentObject(NewCatRegisterViewModel())
+                                RegisterCode(popToRoot: $openCode, mode: .merge).environmentObject(originCat)
+                            }
+                            .onAppear {
+                                originCat.code =  catList[catIdx].catCode
                             }
                         }
                         

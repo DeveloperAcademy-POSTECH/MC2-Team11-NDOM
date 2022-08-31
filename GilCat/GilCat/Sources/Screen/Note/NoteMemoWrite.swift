@@ -65,7 +65,7 @@ struct NoteMemoWrite: View {
             timeFormatter.dateFormat = "HH:mm"
             let currentDate = dateFormatter.string(from: Date.now)
             let currentTime = timeFormatter.string(from: Date.now)
-            catInfo.memoInfo.append(MemoInfo(date: currentDate, time: currentTime, content: inputText))
+            catInfo.memoInfo.append(MemoInfo(date: currentDate, time: currentTime, content: inputText, userId: CodeTool.instance.getUserId()))
             presentation.wrappedValue.dismiss()
         } label: {
             GilCatMainButton(text: "작성 완료", foreground: Color.white, background: .constant(.buttonColor))

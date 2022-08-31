@@ -243,24 +243,25 @@ struct Note: View {
         } else {
             HStack(alignment: .center, spacing: 40) {
                 ForEach(catInfo.memoInfo, id: \.self) { memo in
-                    VStack(alignment: .leading) {
-                        Text(memo.date)
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(Color("ButtonColor"))
-                        Text(memo.time)
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundColor(.gray)
-                        Text(memo.content)
-                            .frame(width: 280, height: 80)
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.white)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(3)
+                    if memo.userId == CodeTool.instance.getUserId() {
+                        VStack(alignment: .leading) {
+                            Text(memo.date)
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(Color("ButtonColor"))
+                            Text(memo.time)
+                                .font(.system(size: 16, weight: .medium))
+                                .foregroundColor(.gray)
+                            Text(memo.content)
+                                .frame(width: 280, height: 80)
+                                .font(.system(size: 20, weight: .semibold))
+                                .foregroundColor(.white)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(3)
+                        }
+                        .frame(width: 340, height: 180)
+                        .background(Color("PickerColor").opacity(0.9))
+                        .cornerRadius(30)
                     }
-                    .frame(width: 340, height: 180)
-                    .background(Color("PickerColor").opacity(0.9))
-                    .cornerRadius(30)
-//                    .padding(.horizontal, 10)
                 }
             }
             .modifier(ScrollingHStackModifier(items: catInfo.memoInfo.count, itemWidth: 340, itemSpacing: 40))

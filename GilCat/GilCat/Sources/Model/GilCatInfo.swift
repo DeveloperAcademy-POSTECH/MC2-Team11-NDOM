@@ -29,6 +29,7 @@ struct GilCatInfo: Codable {
     var healthTagInfo: [HealthTag]  = []
     var memoInfo: [MemoInfo]        = []
     var gilCatMapInformation: GilCatMapCase = .none
+    var removed                     = false
     
     enum CodingKeys: String, CodingKey {
         case userId
@@ -47,6 +48,35 @@ struct GilCatInfo: Codable {
         case healthTagInfo
         case memoInfo
         case gilCatMapInformation
+        case removed
+    }
+    
+    func merge(other: GilCatInfo) -> GilCatInfo {
+        var mergedCat = other
+
+        mergedCat.userId += self.userId
+        mergedCat.healthTagInfo += self.healthTagInfo
+        mergedCat.memoInfo += self.memoInfo
+        
+        if mergedCat.dietInfo.updatedtime.isEmpty && !self.dietInfo.updatedtime.isEmpty {
+            mergedCat.dietInfo.updatedtime = self.dietInfo.updatedtime
+        } else if !mergedCat.dietInfo.updatedtime.isEmpty && !self.dietInfo.updatedtime.isEmpty {
+            let compareDiet = mergedCat.dietInfo.updatedtime.toDate().compare(self.dietInfo.updatedtime.toDate())
+            if compareDiet == .orderedAscending {
+                mergedCat.dietInfo = self.dietInfo
+            }
+        }
+        
+        if mergedCat.waterInfo.updatedtime.isEmpty && !self.waterInfo.updatedtime.isEmpty {
+            mergedCat.waterInfo.updatedtime = self.waterInfo.updatedtime
+        } else if !mergedCat.dietInfo.updatedtime.isEmpty && !self.dietInfo.updatedtime.isEmpty {
+            let compareWater = mergedCat.waterInfo.updatedtime.toDate().compare(self.waterInfo.updatedtime.toDate())
+            if compareWater == .orderedAscending {
+                mergedCat.waterInfo = self.waterInfo
+            }
+        }
+        
+        return mergedCat
     }
 
 }
@@ -67,7 +97,8 @@ extension GilCatInfo {
                                   snackCount: 0,
                                   healthTagInfo: [],
                                   memoInfo: [],
-                                  gilCatMapInformation: .seventh)
+                                  gilCatMapInformation: .seventh,
+                                  removed: false)
 }
 
 // MARK: 먹이 정보
@@ -78,13 +109,15 @@ struct DietInfo: Codable {
         GilCatTimePicker.testTime[timeIndex]
     }
     var amount: Amount
+    var updatedtime: String
     
-    static let initCat: DietInfo = DietInfo(name: "-", timeIndex: 28, amount: .mid)
+    static let initCat: DietInfo = DietInfo(name: "-", timeIndex: 28, amount: .mid, updatedtime: "")
     
     enum CodingKeys: String, CodingKey {
         case name
         case timeIndex
         case amount
+        case updatedtime
     }
 }
 
@@ -95,12 +128,14 @@ struct WaterInfo: Codable {
         GilCatTimePicker.testTime[timeIndex]
     }
     var amount: Amount
+    var updatedtime: String
     
-    static let initCat: WaterInfo = WaterInfo(timeIndex: 28, amount: .mid)
+    static let initCat: WaterInfo = WaterInfo(timeIndex: 28, amount: .mid, updatedtime: "")
     
     enum CodingKeys: String, CodingKey {
         case timeIndex
         case amount
+        case updatedtime
     }
 }
 
@@ -109,11 +144,13 @@ struct MemoInfo: Hashable, Codable {
     var date: String
     var time: String
     var content: String
+    var userId: String
     
     enum CodingKeys: String, CodingKey {
         case date
         case time
         case content
+        case userId
     }
 }
 

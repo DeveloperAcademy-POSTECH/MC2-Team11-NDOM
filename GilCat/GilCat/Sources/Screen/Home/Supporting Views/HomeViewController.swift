@@ -84,16 +84,23 @@ class HomeViewController: UIViewController {
         guard let viewModel = viewModel else { return }
         FirebaseTool.instance.addListener { index, cat, error in
             if let error = error {
-                print("고양이 받아오기 에러: \(error)")
+                print("고양이 리스너 에러: \(error)")
             } else {
-                print("고양이 받아오기 성공")
                 if index == -1 {
-                    if cat.userId.contains(CodeTool.instance.getUserId()) {
+                    if cat.userId.contains(CodeTool.instance.getUserId()) && !cat.removed {
                         viewModel.catLists.append(cat)
                     }
                 } else {
-                    if index == viewModel.catLists[index].index {
-                        viewModel.catLists[index] = cat
+                    var catListIndex = -1
+                    for (idx, originCat) in viewModel.catLists.enumerated() where originCat.index == index {
+                        catListIndex = idx
+                    }
+                    if catListIndex != -1 {
+                        if cat.removed {
+                            viewModel.catLists.remove(at: catListIndex)
+                        } else {
+                            viewModel.catLists[catListIndex] = cat
+                        }
                     } else {
                         viewModel.catLists.append(cat)
                         viewModel.catLists.sort {$0.index < $1.index}
@@ -135,7 +142,6 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func boxImageViewTapped(gesture: UITapGestureRecognizer) {
-        print("boxImageViewTapped")
         viewModel?.boxImageButtonTapped()
     }
 }

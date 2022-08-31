@@ -22,6 +22,7 @@ class FirebaseTool {
         }
     }
     
+    // 파이어베이스에 고양이 객체 가져오기
     func getCat(completion: @escaping (([GilCatInfo], Error?) -> Void)) {
         let storageRef = storagePath.collection("GilCatInfo")
         storageRef.getDocuments { (snapshot, error) in
@@ -34,9 +35,6 @@ class FirebaseTool {
                 do {
                     let cat = try document.data(as: GilCatInfo.self)
                     dataArr.append(cat)
-//                    let jsonData = try JSONSerialization.data(withJSONObject: document.data())
-//                    let decodedData = try JSONDecoder().decode(GilCatInfo.self, from: jsonData)
-//                    dataArr.append(decodedData)
                 } catch {
                     completion([], error)
                     return
@@ -58,11 +56,11 @@ class FirebaseTool {
                     return
                 }
                 
-                snapshot.documentChanges.enumerated().forEach { change in
-                    switch change.element.type {
+                snapshot.documentChanges.forEach { element in
+                    switch element.type {
                     case .added:
                         do {
-                            let cat = try change.element.document.data(as: GilCatInfo.self)
+                            let cat = try element.document.data(as: GilCatInfo.self)
                             print("add \(cat.index)")
                             completion(-1, cat, nil)
                         } catch {
@@ -70,7 +68,7 @@ class FirebaseTool {
                         }
                     case .modified:
                         do {
-                            let cat = try change.element.document.data(as: GilCatInfo.self)
+                            let cat = try element.document.data(as: GilCatInfo.self)
                             print("modified \(cat.index)")
                             completion(cat.index, cat, nil)
                         } catch {
@@ -86,6 +84,7 @@ class FirebaseTool {
     // 파이어베이스에 고양이 객체 수정
     func updateCat(updatingCat: GilCatInfo, completion: @escaping ((Error?) -> Void)) {
         let documentRef = storagePath.collection("GilCatInfo").document("Cat\(updatingCat.index)")
+        
         let dictionary = updatingCat.dictionary
         documentRef.setData(dictionary) { error in
             if let error = error {
@@ -94,6 +93,12 @@ class FirebaseTool {
             }
             completion(nil)
         }
+    }
+    
+    // 파이어베이스에 고양이 객체 삭제
+    func removeCat(removingCatIndex: Int) {
+        let documentRef = storagePath.collection("GilCatInfo").document("Cat\(removingCatIndex)")
+        documentRef.updateData(["removed": true])
     }
     
     func removeListener() {

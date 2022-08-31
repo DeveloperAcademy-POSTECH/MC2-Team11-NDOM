@@ -96,10 +96,8 @@ struct RegisterFinish: View {
             
             FirebaseTool.instance.addCat(newCat: newModel) { error in
                 if let error = error {
-                    print("새로운 고양이 업로드 에러: \(error)")
-                } else {
-                    print("새로운 고양이 업로드 성공")
-                }
+                    print("고양이 업로드 에러: \(error)")
+                } 
             }
             isActiveForPopToRoot = false
             newCat.initcat()

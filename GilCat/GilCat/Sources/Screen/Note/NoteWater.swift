@@ -51,6 +51,7 @@ struct NoteWater: View {
                     Image(systemName: "chevron.backward")
                         .foregroundColor(.white)
                         .onTapGesture {
+                            catInfo.waterInfo.updatedtime = Date().toString()
                             self.presentation.wrappedValue.dismiss()
                         }
                 }
@@ -72,6 +73,7 @@ struct NoteWater: View {
     @ViewBuilder
     private func createWater() -> some View {
         Button {
+            catInfo.waterInfo.updatedtime = Date().toString()
             self.presentation.wrappedValue.dismiss()
         } label: {
             Rectangle()

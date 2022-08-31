@@ -64,6 +64,7 @@ struct NoteFood: View {
                     Image(systemName: "chevron.backward")
                         .foregroundColor(.white)
                         .onTapGesture {
+                            catInfo.dietInfo.updatedtime = Date().toString()
                             self.presentation.wrappedValue.dismiss()
                         }
                 }
@@ -104,6 +105,7 @@ struct NoteFood: View {
     @ViewBuilder
     private func createFood() -> some View {
         Button {
+            catInfo.dietInfo.updatedtime = Date().toString()
             self.presentation.wrappedValue.dismiss()
         } label: {
             Rectangle()
