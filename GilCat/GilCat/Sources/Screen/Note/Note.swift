@@ -300,9 +300,9 @@ struct Note: View {
     }
 }
 
-//struct Note_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Note()
-//            .environmentObject(InfoToNote())
-//    }
-//}
+// struct Note_Previews: PreviewProvider {
+//     static var previews: some View {
+//         Note()
+//             .environmentObject(InfoToNote())
+//     }
+// }

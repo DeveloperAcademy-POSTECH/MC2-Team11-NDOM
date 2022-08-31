@@ -154,7 +154,6 @@ struct RegisterCode: View {
             }
             .isDetailLink(false)
             Button {
-                // TODO: 코드에 따라 서버에서 다른 고양이 룸 정보 받아오기
                 // 코드가 다 입력이 안됐다면, 팝업 창 보여주기
                 if newCat.code.count != 6 {
                     isAlertActice = true
@@ -178,7 +177,6 @@ struct RegisterCode: View {
                 GilCatMainButton(text: "닫기", foreground: .white, background: .constant(.pickerColor))
             }
             Button {
-                // TODO: 코드에 따라 서버에서 다른 고양이 룸 정보 받아오기
                 // 코드가 다 입력이 안됐다면, 팝업 창 보여주기
                 if newCat.code.count != 6 {
                     isAlertActice = true

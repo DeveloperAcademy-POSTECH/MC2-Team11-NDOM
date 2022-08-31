@@ -63,7 +63,6 @@ enum GilCatMapCase: Codable {
         case .eighth:
             return .points[7]
         case .none:
-            // TODO: 없을 경우 처리해주기.
             return .points[0]
         }
     }

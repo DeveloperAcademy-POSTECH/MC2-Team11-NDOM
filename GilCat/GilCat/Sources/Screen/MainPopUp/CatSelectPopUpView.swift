@@ -142,8 +142,8 @@ struct CatSelectPopup: View {
     }
 }
 //
-//struct CatSelectPopup_Previews: PreviewProvider {
+// struct CatSelectPopup_Previews: PreviewProvider {
 //    static var previews: some View {
 //        CatSelectPopup(isPopup: .constant(true), cat: .constant(GilCatInfo.empty))
 //    }
-//}
+// }

@@ -22,6 +22,10 @@ class HomeViewModel: ObservableObject {
     }
     
     func boxImageButtonTapped() {
-        isNewCatRegisterPopup = true
+        if HomeViewModel.instance.catLists.count < 8 {
+            isNewCatRegisterPopup = true
+        } else {
+            print("고양이 꽉참ㅎ")
+        }
     }
 }

@@ -120,7 +120,7 @@ struct RegisterAvatar: View {
             .overlay(
                 Circle()
                     .stroke(newCat.avatarColor == catColor ? Color.buttonColor : Color.profileBackgroundColor, lineWidth: 4)
-            ) //색깔 선택시 구분 선 보이게 함
+            ) // 색깔 선택시 구분 선 보이게 함
             .onTapGesture {
                 newCat.avatarColor = catColor
             }

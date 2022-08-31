@@ -7,7 +7,7 @@ struct RegisterName: View {
     @Binding private var isActiveForPopToRoot: Bool
     @State private var isLinkActive = false
     @State private var isAlertActive = false
-    @State private var buttonColor : Color = .gray
+    @State private var buttonColor: Color = .gray
     
     init(popToRoot: Binding<Bool>) {
         Theme.navigationBarColors(background: .systemFill, titleColor: .white)

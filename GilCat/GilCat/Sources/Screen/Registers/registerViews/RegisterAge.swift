@@ -14,7 +14,7 @@ struct RegisterAge: View {
     @State private var isLinkActive = false
     @State private var isShowingType = false
     @State private var isFirstClick = true
-    @State private var buttonColor : Color = .gray
+    @State private var buttonColor: Color = .gray
     // 나이랑 종 값 입력 다 할 경우 건너뛰기 버튼은 사라지고 다음만 남도록 하기 위한 변수
     @State private var isInputFinish = false
     private var catName: String = ""

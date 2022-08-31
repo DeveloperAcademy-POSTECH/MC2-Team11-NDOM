@@ -92,7 +92,7 @@ struct RegisterFinish: View {
     @ViewBuilder
     private func getMainButtomView() -> some View {
         Button {
-            var newModel = newCat.makeGilCatInfoModel()
+            let newModel = newCat.makeGilCatInfoModel()
             
             FirebaseTool.instance.addCat(newCat: newModel) { error in
                 if let error = error {
