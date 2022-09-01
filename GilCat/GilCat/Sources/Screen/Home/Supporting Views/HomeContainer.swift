@@ -17,8 +17,10 @@ struct HomeContainer: UIViewControllerRepresentable {
         let controller = storyboard.instantiateViewController(identifier: storyboardName)
         guard let homeViewContoller = controller as? HomeViewController else { fatalError() }
         homeViewContoller.viewModel = viewModel
+        
         DispatchQueue.main.async {
             myController = homeViewContoller
+            viewModel.myController = myController
         }
         return homeViewContoller
     }

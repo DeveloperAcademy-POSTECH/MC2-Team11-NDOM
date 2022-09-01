@@ -25,7 +25,11 @@ struct Home: View {
                                    catList: $viewModel.catLists, catIdx: $viewModel.selectedIdx)
                 }
             }
-        
+            .onChange(of: viewModel.isCatPopup) { _ in
+                if !viewModel.isCatPopup {
+                    viewModel.myController?.zoomOut()
+                }
+            }
     }
 }
 /*

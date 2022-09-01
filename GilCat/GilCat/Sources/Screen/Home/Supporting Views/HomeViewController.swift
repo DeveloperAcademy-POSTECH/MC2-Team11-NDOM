@@ -82,6 +82,7 @@ class HomeViewController: UIViewController {
     
     private func initializeCats() {
         guard let viewModel = viewModel else { return }
+
         FirebaseTool.instance.addListener { index, cat, error in
             if let error = error {
                 print("고양이 리스너 에러: \(error)")
@@ -131,6 +132,10 @@ class HomeViewController: UIViewController {
                                                      action: #selector(catImageButtonTapped))
         catImageView.isUserInteractionEnabled = true
         catImageView.addGestureRecognizer(catTouchGesture)
+    }
+    
+    func zoomOut() {
+        scrollView.setZoomScale(1.0, animated: true)
     }
     
     @objc private func catImageButtonTapped(gesture: UITapGestureRecognizer) {

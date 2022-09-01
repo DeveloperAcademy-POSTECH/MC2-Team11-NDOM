@@ -10,6 +10,7 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     static let instance = HomeViewModel()
     
+    var myController: HomeViewController?
     @Published var newCatRegisterViewModel: NewCatRegisterViewModel = NewCatRegisterViewModel()
     @Published var catLists: [GilCatInfo] = []
     @Published var selectedIdx: Int = -1
