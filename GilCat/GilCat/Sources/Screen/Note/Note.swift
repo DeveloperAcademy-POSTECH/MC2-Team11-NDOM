@@ -81,6 +81,11 @@ struct Note: View {
                         memoCount += 1
                     }
                 }
+                
+                // 간식 개수 초기화시키기
+                if catInfo.snackInfo.updatedtime != Date().toString(format: "yyyy-MM-dd") {
+                    catInfo.snackInfo.snackCount = 0
+                }
             }
         }
     }
@@ -100,15 +105,15 @@ struct Note: View {
                         .padding()
                     Spacer()
                     ZStack {
-                        if catInfo.snackCount == 0 {
+                        if catInfo.snackInfo.snackCount == 0 {
                             Text("터치하면 추가됩니다.\n자정에 갱신됩니다.")
                                 .font(.system(size: 16, weight: .light))
                                 .foregroundColor(.white)
                                 .opacity(0.8)
                                 .padding(.horizontal, 10)
-                        } else if 0 < catInfo.snackCount && catInfo.snackCount < 6 {
+                        } else if 0 < catInfo.snackInfo.snackCount && catInfo.snackInfo.snackCount < 6 {
                             HStack(spacing: 5) {
-                                ForEach(0...catInfo.snackCount-1, id: \.self) { _ in
+                                ForEach(0...catInfo.snackInfo.snackCount-1, id: \.self) { _ in
                                     Image("stick")
                                         .resizable()
                                         .scaledToFit()
@@ -118,7 +123,7 @@ struct Note: View {
                         } else {
                             HStack {
                                 Spacer()
-                                Text("\(catInfo.snackCount)개")
+                                Text("\(catInfo.snackInfo.snackCount)개")
                                     .font(.system(size: 24, weight: .heavy))
                                     .foregroundColor(.red)
                                 Spacer()
@@ -133,7 +138,8 @@ struct Note: View {
                 .padding()
             }
             .onTapGesture {
-                catInfo.snackCount += 1
+                catInfo.snackInfo.snackCount += 1
+                catInfo.snackInfo.updatedtime = Date().toString(format: "yyyy-MM-dd")
             }
             .padding(.bottom, 20)
     }

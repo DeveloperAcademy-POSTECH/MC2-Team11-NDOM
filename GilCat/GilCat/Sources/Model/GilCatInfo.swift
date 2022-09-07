@@ -25,7 +25,7 @@ struct GilCatInfo: Codable {
     }
     var dietInfo: DietInfo          = .initCat
     var waterInfo: WaterInfo        = .initCat
-    var snackCount: Int             = 0
+    var snackInfo: SnackInfo       = .initSnack
     var healthTagInfo: [HealthTag]  = []
     var memoInfo: [MemoInfo]        = []
     var gilCatMapInformation: GilCatMapCase = .none
@@ -44,7 +44,7 @@ struct GilCatInfo: Codable {
         case avatarBodyIndex
         case dietInfo
         case waterInfo
-        case snackCount
+        case snackInfo
         case healthTagInfo
         case memoInfo
         case gilCatMapInformation
@@ -94,7 +94,7 @@ extension GilCatInfo {
                                   avatarBodyIndex: 4,
                                   dietInfo: DietInfo.initCat,
                                   waterInfo: WaterInfo.initCat,
-                                  snackCount: 0,
+                                  snackInfo: SnackInfo.initSnack,
                                   healthTagInfo: [],
                                   memoInfo: [],
                                   gilCatMapInformation: .seventh,
@@ -135,6 +135,19 @@ struct WaterInfo: Codable {
     enum CodingKeys: String, CodingKey {
         case timeIndex
         case amount
+        case updatedtime
+    }
+}
+
+// MARK: 간식 정보
+struct SnackInfo: Codable {
+    var snackCount: Int
+    var updatedtime: String
+    
+    static let initSnack: SnackInfo = SnackInfo(snackCount: 0, updatedtime: Date().toString(format: "yyyy-MM-dd"))
+    
+    enum CodingKeys: String, CodingKey {
+        case snackCount
         case updatedtime
     }
 }

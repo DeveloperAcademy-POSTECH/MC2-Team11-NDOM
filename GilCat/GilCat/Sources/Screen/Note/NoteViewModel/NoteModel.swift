@@ -20,7 +20,7 @@ class InfoToNote: ObservableObject {
     @Published var avatarBodyIndex: Int        = 0             // 아바타 몸
     @Published var dietInfo: DietInfo          = .initCat      // 사료 정보
     @Published var waterInfo: WaterInfo        = .initCat      // 물 정보
-    @Published var snackCount: Int             = 0             // 간식 개수
+    @Published var snackInfo: SnackInfo       = .initSnack    // 간식 개수
     @Published var healthTagInfo: [HealthTag]  = []            // 건강 태그
     @Published var memoInfo: [MemoInfo]        = []            // 메모 정보
     @Published var removed: Bool               = false
@@ -43,7 +43,7 @@ class InfoToNote: ObservableObject {
         gilCatInfo.avatarBodyIndex = avatarBodyIndex
         gilCatInfo.dietInfo = dietInfo
         gilCatInfo.waterInfo = waterInfo
-        gilCatInfo.snackCount = snackCount
+        gilCatInfo.snackInfo = snackInfo
         gilCatInfo.healthTagInfo = healthTagInfo
         gilCatInfo.memoInfo = memoInfo
         gilCatInfo.removed = removed
@@ -64,7 +64,7 @@ class InfoToNote: ObservableObject {
         avatarBodyIndex = gilCat.avatarBodyIndex
         dietInfo = gilCat.dietInfo
         waterInfo = gilCat.waterInfo
-        snackCount = gilCat.snackCount
+        snackInfo = gilCat.snackInfo
         healthTagInfo = gilCat.healthTagInfo
         memoInfo = gilCat.memoInfo
         removed = gilCat.removed
