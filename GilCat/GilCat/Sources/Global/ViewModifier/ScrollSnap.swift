@@ -43,7 +43,7 @@ struct ScrollingHStackModifier: ViewModifier {
         let screenWidth = UIScreen.main.bounds.width
         
         // Set Initial Offset to first Item
-        let initialOffset = -(contentWidth/2.0) + (screenWidth/2.0) - ((screenWidth - itemWidth)/2.0) + ((itemWidth + itemSpacing) / 2.0)
+        let initialOffset = -(contentWidth/2.0) + (screenWidth/2.0) - ((screenWidth - itemWidth)/2.0)
         
         self._scrollOffset = State(initialValue: initialOffset)
         self._dragOffset = State(initialValue: 0)
@@ -69,15 +69,12 @@ struct ScrollingHStackModifier: ViewModifier {
                     let center = scrollOffset + (screenWidth / 2.0) + (contentWidth / 2.0)
                     
                     // Calculate which item we are closest to using the defined size
-                    var index = (center - (screenWidth / 2.0)) / (itemWidth + itemSpacing) - 0.5
+                    var index = (center - (screenWidth / 2.0)) / (itemWidth + itemSpacing)
                     
                     // Should we stay at current index or are we closer to the next item...
                     if index.remainder(dividingBy: 1) > 0.5 {
                         index += 1
                     } else {
-                        if index > CGFloat(items-1) {
-                            index -= 1
-                        }
                         index = CGFloat(Int(index))
                     }
                     
@@ -86,8 +83,8 @@ struct ScrollingHStackModifier: ViewModifier {
                     index = max(index, 0)
                     
                     // Set final offset (snapping to item)
-                    let newOffset = index * itemWidth + (index - 1) * itemSpacing - (contentWidth / 2.0) + (screenWidth / 2.0) - ((screenWidth - itemWidth) / 2.0) + itemSpacing + ((itemWidth + itemSpacing) / 2.0)
-                
+                    let newOffset = index * itemWidth + (index - 1) * itemSpacing - (contentWidth / 2.0) + (screenWidth / 2.0) - ((screenWidth - itemWidth) / 2.0) + itemSpacing
+                    
                     // Animate snapping
                     withAnimation {
                         scrollOffset = newOffset

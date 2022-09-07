@@ -14,6 +14,7 @@ struct Note: View {
     @Environment(\.presentationMode) var presentation
     @State private var checkProfile = false
     @State private var activatedHealthTagInfo = [HealthTag]()
+    @State private var memoCount = 0
     
     var body: some View {
         NavigationView {
@@ -71,6 +72,14 @@ struct Note: View {
                 activatedHealthTagInfo.removeAll()
                 for tag in catInfo.healthTagInfo where tag.isClicked {
                     activatedHealthTagInfo.append(tag)
+                }
+                
+                // 메모 개수 세기
+                memoCount = 0
+                for memo in catInfo.memoInfo {
+                    if memo.userId == CodeTool.instance.getUserId() {
+                        memoCount += 1
+                    }
                 }
             }
         }
@@ -264,7 +273,7 @@ struct Note: View {
                     }
                 }
             }
-            .modifier(ScrollingHStackModifier(items: catInfo.memoInfo.count, itemWidth: 340, itemSpacing: 40))
+            .modifier(ScrollingHStackModifier(items: memoCount, itemWidth: 340, itemSpacing: 40))
         }
     }
     
