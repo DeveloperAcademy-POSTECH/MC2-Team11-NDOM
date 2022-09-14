@@ -91,7 +91,7 @@ struct Note: View {
             .foregroundColor(Color("PickerColor").opacity(0.9))
             .overlay {
                 HStack {
-                    Text("츄르 몇개?")
+                    Text("간식 개수")
                         .font(.system(size: 20, weight: .heavy))
                         .foregroundColor(.white)
                         .minimumScaleFactor(0.5)
@@ -120,7 +120,7 @@ struct Note: View {
                                     .font(.system(size: 24, weight: .heavy))
                                     .foregroundColor(.red)
                                 Spacer()
-                                Text("그..그만 주세요!")
+                                Text("너무 많이 줬어요!")
                                     .font(.system(size: 14, weight: .heavy))
                                     .foregroundColor(.orange)
                             }
