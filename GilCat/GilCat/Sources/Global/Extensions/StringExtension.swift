@@ -1,10 +1,3 @@
-//
-//  StringExtension.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/08/31.
-//
-
 import SwiftUI
 
 extension String {

@@ -1,10 +1,3 @@
-//
-//  RegisterViewModel.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/14.
-//
-
 import SwiftUI
 
 class NewCatRegisterViewModel: ObservableObject {

@@ -1,10 +1,3 @@
-//
-//  NoteTagEditView.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/15.
-//
-
 import SwiftUI
 import CoreGraphics
 

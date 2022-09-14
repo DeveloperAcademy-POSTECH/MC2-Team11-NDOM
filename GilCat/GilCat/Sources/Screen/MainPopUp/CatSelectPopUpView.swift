@@ -1,10 +1,3 @@
-//
-//  CatSelect_Popup.swift
-//  GilCat
-//
-//  Created by Beone on 2022/06/08.
-//
-
 import SwiftUI
 
 @ViewBuilder

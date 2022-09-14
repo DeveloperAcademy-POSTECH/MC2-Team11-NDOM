@@ -1,10 +1,3 @@
-//
-//  CatImage.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/10.
-//
-
 import SwiftUI
 
 // 수많은 고양이 이미지와 색깔을 쉽게 가져오게 하기 위해 만든 뷰

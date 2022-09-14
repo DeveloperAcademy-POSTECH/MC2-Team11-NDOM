@@ -1,10 +1,3 @@
-//
-//  FirebaseTool.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/08/29.
-//
-
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 

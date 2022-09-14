@@ -1,10 +1,3 @@
-// 다른 프로젝트에서 가져왔습니다.
-//  EnCodable+.swift
-//  GilCat
-//
-//  Created by Woody on 2022/06/14.
-//
-
 import Foundation
 
 extension Encodable {

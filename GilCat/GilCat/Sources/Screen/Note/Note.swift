@@ -1,10 +1,3 @@
-//
-//  NoteView.swift
-//  GilCat
-//
-//  Created by KYUBO A. SHIM on 2022/06/09.
-//
-
 import SwiftUI
 import PartialSheet
 

@@ -1,10 +1,3 @@
-//
-//  codeView.swift
-//  GilCat
-//
-//  Created by Beone on 2022/06/09.
-//
-
 import SwiftUI
 
 struct CodeView: View {

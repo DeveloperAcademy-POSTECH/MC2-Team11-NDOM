@@ -1,10 +1,3 @@
-//
-//  ScrollSnap.swift
-//  GilCat
-//
-//  Created by KYUBO A. SHIM on 2022/06/15.
-//
-
 import SwiftUI
 
 /*

@@ -1,10 +1,3 @@
-//
-//  GilCatTimePicker.swift
-//  GilCat
-//
-//  Created by KYUBO A. SHIM on 2022/06/13.
-//
-
 import SwiftUI
 
 struct GilCatTimePicker: View {

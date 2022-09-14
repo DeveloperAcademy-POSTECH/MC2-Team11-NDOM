@@ -1,10 +1,3 @@
-//
-//  CatInfo.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/10.
-//
-
 import Combine
 import Foundation
 

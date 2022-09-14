@@ -1,11 +1,3 @@
-//
-//  CustomSubTitle.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/10.
-//
-//
-
 import SwiftUI
 
 // 주의사항이나 간단한 문구를 적을 때를 위한 뷰

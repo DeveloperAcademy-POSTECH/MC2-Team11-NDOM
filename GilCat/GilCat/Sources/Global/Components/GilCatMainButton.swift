@@ -1,10 +1,3 @@
-//
-//  CustomMainButton.swift
-//  GilCat
-//
-//  Created by 김동락 on 2022/06/10.
-//
-
 import SwiftUI
 
 // 앱에서 메인 버튼으로 쓰이는 뷰
