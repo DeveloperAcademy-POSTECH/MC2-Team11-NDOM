@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import Lottie
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -20,8 +21,11 @@ class HomeViewController: UIViewController {
     private func setupBoxImageView() {
         let image = UIImage(named: "boxWithCat")
         let boxImageView = UIImageView(image: image)
+        let shiningView = getShiningView()
         
         contentView.addSubview(boxImageView)
+        contentView.addSubview(shiningView)
+        
         boxImageView.contentMode = .scaleAspectFit
         boxImageView.frame.size = CGSize(width: GilCatMapInformation.box.size.size.width,
                                          height: GilCatMapInformation.box.size.size.height)
@@ -30,8 +34,34 @@ class HomeViewController: UIViewController {
         
         let touchGesture = UITapGestureRecognizer(target: self,
                                                action: #selector(boxImageViewTapped))
-        boxImageView.isUserInteractionEnabled = true
-        boxImageView.addGestureRecognizer(touchGesture)
+        shiningView.isUserInteractionEnabled = true
+        shiningView.addGestureRecognizer(touchGesture)
+    }
+    
+    private func getShiningView() -> UIView {
+        let view = UIView(frame: .zero)
+        let animationView = AnimationView()
+        
+        animationView.animation = Animation.named("shining")
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.frame.size = CGSize(width: GilCatSizeInformation.extraBig.size.width,
+                                          height: GilCatSizeInformation.extraBig.size.height)
+        animationView.play()
+        
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(animationView)
+        
+        NSLayoutConstraint.activate([
+            animationView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            animationView.heightAnchor.constraint(equalTo: view.heightAnchor)
+        ])
+        
+        view.frame.size = CGSize(width: GilCatSizeInformation.extraBig.size.width,
+                                 height: GilCatSizeInformation.extraBig.size.height)
+        view.frame.origin = CGPoint(x: GilCatMapInformation.box.location.xPercent-60,
+                                            y: GilCatMapInformation.box.location.yPercent-60)
+        return view
     }
     
     private func setupScrollView() {
