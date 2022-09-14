@@ -162,7 +162,7 @@ struct MemoInfo: Hashable, Codable {
 
 // MARK: 태그 정보
 struct HealthTag: Hashable, Codable {
-    init(_ text: String, isClicked: Bool = false) {
+    init(_ text: String, isClicked: Bool = true) {
         self.text = text
         self.isClicked = isClicked
     }
