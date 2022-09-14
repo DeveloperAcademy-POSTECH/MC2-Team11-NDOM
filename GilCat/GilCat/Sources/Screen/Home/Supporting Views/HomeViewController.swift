@@ -23,8 +23,8 @@ class HomeViewController: UIViewController {
         let boxImageView = UIImageView(image: image)
         let shiningView = getShiningView()
         
-        contentView.addSubview(boxImageView)
         contentView.addSubview(shiningView)
+        contentView.addSubview(boxImageView)
         
         boxImageView.contentMode = .scaleAspectFit
         boxImageView.frame.size = CGSize(width: GilCatMapInformation.box.size.size.width,
@@ -34,8 +34,8 @@ class HomeViewController: UIViewController {
         
         let touchGesture = UITapGestureRecognizer(target: self,
                                                action: #selector(boxImageViewTapped))
-        shiningView.isUserInteractionEnabled = true
-        shiningView.addGestureRecognizer(touchGesture)
+        boxImageView.isUserInteractionEnabled = true
+        boxImageView.addGestureRecognizer(touchGesture)
     }
     
     private func getShiningView() -> UIView {
